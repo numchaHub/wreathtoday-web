@@ -1,0 +1,26 @@
+# WreathToday - robots.txt
+# https://www.wreathtoday.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.wreathtoday.com/sitemap.xml
+
+# Disallow private/system files
+Disallow: /.claude/
+Disallow: /serve.json
+
+# Allow all search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Crawl-delay for polite crawling
+User-agent: *
+Crawl-delay: 1
