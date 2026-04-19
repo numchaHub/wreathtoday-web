@@ -151,8 +151,8 @@ ul { list-style: none; }
 .modal-close:hover { color: var(--text); }
 .modal-body { padding: 32px; }
 .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
-.modal-image { background: #fff; border-radius: var(--radius-sm); overflow: hidden; }
-.modal-image img { width: 100%; object-fit: contain; }
+.modal-image { background: #fff; border-radius: var(--radius-sm); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.modal-image img { max-width: 100%; height: auto; object-fit: contain; display: block; margin: 0 auto; }
 .modal-info h2 { font-size: 22px; font-weight: 700; color: var(--secondary); margin-bottom: 8px; }
 .modal-sku { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
 .modal-price { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }

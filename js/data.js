@@ -259,17 +259,17 @@ const PRODUCTS = [
     { id: 207, name: "Pantida", sku: "fwd18-2", category: "fan", categoryName: "พวงหรีดพัดลม",
       price: 3200, originalPrice: null, image: "image/35.jpg", badge: "new",
       description: "พวงหรีดพัดลมตั้งพื้น 2 ชั้น หน้าวัว ปิงปองเหลือง กุหลาบ สง่างาม",
-      size: "พัดลมตั้งพื้น 16 นิ้ว", flowers: ["หน้าวัว","ปิงปองเหลือง","กุหลาบ","ยูคาลิปตัส"] },
+      size: "พัดลมตั้งพื้น 18 นิ้ว", flowers: ["หน้าวัว","ปิงปองเหลือง","กุหลาบ","ยูคาลิปตัส"] },
 
     { id: 208, name: "Laweewan", sku: "fwd18-3", category: "fan", categoryName: "พวงหรีดพัดลม",
       price: 3500, originalPrice: null, image: "image/35.5.jpg", badge: null,
       description: "พวงหรีดพัดลมตั้งพื้น 2 ชั้น หน้าวัว กุหลาบขาว ปิงปอง ยูคาลิปตัส",
-      size: "พัดลมตั้งพื้น 16 นิ้ว", flowers: ["หน้าวัว","กุหลาบขาว","ปิงปองเขียว","ยูคาลิปตัส"] },
+      size: "พัดลมตั้งพื้น 18 นิ้ว", flowers: ["หน้าวัว","กุหลาบขาว","ปิงปองเขียว","ยูคาลิปตัส"] },
 
     { id: 209, name: "Wilailuk", sku: "fwd18-1", category: "fan", categoryName: "พวงหรีดพัดลม",
       price: 3500, originalPrice: null, image: "image/36.jpg", badge: "hot",
       description: "พวงหรีดพัดลมตั้งพื้น 2 ชั้น ลิลลี่ชมพู กุหลาบ หน้าวัว หรูหรา",
-      size: "พัดลมตั้งพื้น 16 นิ้ว", flowers: ["ลิลลี่ชมพู","กุหลาบชมพู","หน้าวัว","ยูคาลิปตัส"] },
+      size: "พัดลมตั้งพื้น 18 นิ้ว", flowers: ["ลิลลี่ชมพู","กุหลาบชมพู","หน้าวัว","ยูคาลิปตัส"] },
 
     // ===== พรีเมียม =====
     { id: 300, name: "Laongtip", sku: "wd31", category: "premium", categoryName: "พวงหรีดพรีเมียม",
