@@ -1,148 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- หน้าแรก - ความสำคัญสูงสุด -->
+    <!-- หน้าแรก (single-page app) -->
     <url>
         <loc>https://www.wreathtoday.com/</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>daily</changefreq>
+        <lastmod>2026-04-19</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
 
-    <!-- หน้าสินค้าทั้งหมด -->
+    <!-- หมวดหมู่ (anchor links — Google จะ index เป็นหน้าแรกเดียวกัน) -->
     <url>
-        <loc>https://www.wreathtoday.com/products.html</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- หมวดหมู่: พวงหรีดดอกไม้สด -->
-    <url>
-        <loc>https://www.wreathtoday.com/products.html?cat=fresh</loc>
-        <lastmod>2026-04-13</lastmod>
+        <loc>https://www.wreathtoday.com/#fresh</loc>
+        <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
-
-    <!-- หมวดหมู่: พวงหรีดพัดลม -->
     <url>
-        <loc>https://www.wreathtoday.com/products.html?cat=fan</loc>
-        <lastmod>2026-04-13</lastmod>
+        <loc>https://www.wreathtoday.com/#fan</loc>
+        <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
-
-    <!-- หมวดหมู่: พวงหรีดดอกไม้ประดิษฐ์ -->
     <url>
-        <loc>https://www.wreathtoday.com/products.html?cat=artificial</loc>
-        <lastmod>2026-04-13</lastmod>
+        <loc>https://www.wreathtoday.com/#premium</loc>
+        <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
-    </url>
-
-    <!-- หมวดหมู่: พวงหรีดดอกไม้จันทน์ -->
-    <url>
-        <loc>https://www.wreathtoday.com/products.html?cat=sandalwood</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- หมวดหมู่: พวงหรีดผ้า -->
-    <url>
-        <loc>https://www.wreathtoday.com/products.html?cat=fabric</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- หมวดหมู่: Eco พวงหรีด -->
-    <url>
-        <loc>https://www.wreathtoday.com/products.html?cat=eco</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- รายละเอียดสินค้าแต่ละรายการ -->
-    <url>
-        <loc>https://www.wreathtoday.com/detail.html?id=1</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.wreathtoday.com/detail.html?id=2</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.wreathtoday.com/detail.html?id=3</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.wreathtoday.com/detail.html?id=4</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.wreathtoday.com/detail.html?id=5</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.wreathtoday.com/detail.html?id=6</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.wreathtoday.com/detail.html?id=7</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.wreathtoday.com/detail.html?id=8</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.wreathtoday.com/detail.html?id=9</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.wreathtoday.com/detail.html?id=10</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.wreathtoday.com/detail.html?id=11</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.wreathtoday.com/detail.html?id=12</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- เกี่ยวกับเรา / ติดต่อ -->
-    <url>
-        <loc>https://www.wreathtoday.com/about.html</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
     </url>
 </urlset>
