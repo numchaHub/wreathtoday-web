@@ -29,19 +29,117 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css?v=20260420">
 
-    <!-- Schema.org -->
+    <!-- Schema.org: LocalBusiness (Florist) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Florist",
+        "@type": ["Florist", "LocalBusiness"],
+        "@id": "https://www.wreathtoday.com/#business",
+        "name": "WreathToday",
+        "alternateName": "พวงหรีดออนไลน์ WreathToday",
+        "url": "https://www.wreathtoday.com",
+        "logo": "https://www.wreathtoday.com/image/logo.png",
+        "image": "https://www.wreathtoday.com/image/og-cover.jpg",
+        "description": "บริการส่งพวงหรีดออนไลน์ ดอกไม้สด พัดลม พรีเมียม ส่งด่วน 1-3 ชั่วโมง กรุงเทพ นนทบุรี สมุทรปราการ เชียงใหม่ ส่งฟรี มีรูปยืนยันทุกออเดอร์",
+        "telephone": "+66941476210",
+        "email": "info@wreathtoday.com",
+        "priceRange": "฿1,090 - ฿7,000",
+        "currenciesAccepted": "THB",
+        "paymentAccepted": "Cash, Bank Transfer, PromptPay, QR Code",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "TH",
+            "addressRegion": "กรุงเทพมหานคร",
+            "addressLocality": "เขตวัฒนา"
+        },
+        "areaServed": [
+            {"@type": "City", "name": "กรุงเทพมหานคร"},
+            {"@type": "City", "name": "นนทบุรี"},
+            {"@type": "City", "name": "สมุทรปราการ"},
+            {"@type": "City", "name": "เชียงใหม่"}
+        ],
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+        },
+        "knowsLanguage": ["th", "en"],
+        "sameAs": [
+            "https://line.me/R/ti/p/@wreathtoday",
+            "https://www.facebook.com/wreathtoday"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+66941476210",
+            "contactType": "customer service",
+            "availableLanguage": ["Thai", "English"],
+            "areaServed": "TH",
+            "hoursAvailable": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+                "opens": "00:00",
+                "closes": "23:59"
+            }
+        },
+        "makesOffer": [
+            {
+                "@type": "Offer",
+                "itemOffered": {"@type": "Product", "name": "พวงหรีดดอกไม้สด", "category": "Fresh Flower Wreath"},
+                "priceSpecification": {"@type": "PriceSpecification", "minPrice": "1090", "maxPrice": "3500", "priceCurrency": "THB"}
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {"@type": "Product", "name": "พวงหรีดพัดลม", "category": "Fan Wreath"},
+                "priceSpecification": {"@type": "PriceSpecification", "minPrice": "1800", "maxPrice": "3500", "priceCurrency": "THB"}
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {"@type": "Product", "name": "พวงหรีดพรีเมียม", "category": "Premium Wreath"},
+                "priceSpecification": {"@type": "PriceSpecification", "minPrice": "4000", "maxPrice": "7000", "priceCurrency": "THB"}
+            }
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "พวงหรีดทั้งหมด",
+            "itemListElement": [
+                {"@type": "OfferCatalog", "name": "ดอกไม้สด", "numberOfItems": 41},
+                {"@type": "OfferCatalog", "name": "พัดลม", "numberOfItems": 12},
+                {"@type": "OfferCatalog", "name": "พรีเมียม", "numberOfItems": 11}
+            ]
+        }
+    }
+    </script>
+    <!-- Schema.org: Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://www.wreathtoday.com/#organization",
         "name": "WreathToday",
         "url": "https://www.wreathtoday.com",
-        "description": "มอบพวงหรีดแด่ผู้วายชนม์แทนคุณ บริการพวงหรีดออนไลน์ ส่งตรงถึงศาลาทั่วประเทศ",
-        "telephone": "094-147-6210",
-        "email": "info@wreathtoday.com",
-        "priceRange": "฿1,290 - ฿5,990",
-        "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59"},
-        "areaServed": {"@type": "Country", "name": "Thailand"}
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.wreathtoday.com/image/logo.png",
+            "width": 512,
+            "height": 512
+        },
+        "sameAs": [
+            "https://line.me/R/ti/p/@wreathtoday"
+        ]
+    }
+    </script>
+    <!-- Schema.org: WebSite (with SearchAction) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://www.wreathtoday.com/#website",
+        "url": "https://www.wreathtoday.com",
+        "name": "WreathToday",
+        "description": "พวงหรีดออนไลน์ ส่งทั่วประเทศ",
+        "publisher": {"@id": "https://www.wreathtoday.com/#organization"},
+        "inLanguage": "th-TH"
     }
     </script>
     <!-- Schema.org: Product ItemList (auto-generated) -->
