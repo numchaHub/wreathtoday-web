@@ -123,7 +123,7 @@ function createProductCard(product) {
         <div class="product-card" data-id="${product.id}">
             <div class="product-image">
                 ${badgeHTML}
-                <img src="${product.image}" alt="${product.name}" loading="lazy">
+                <img src="${product.image}" alt="พวงหรีด${product.name} ${product.categoryName} ${product.description}" loading="lazy">
             </div>
             <div class="product-info">
                 <div class="product-price">
@@ -179,7 +179,7 @@ function openProductModal(id) {
     body.innerHTML = `
         <div class="modal-grid">
             <div class="modal-image">
-                <img src="${product.image}" alt="${product.name}">
+                <img src="${product.image}" alt="พวงหรีด${product.name} ${product.categoryName} ${product.description}" loading="lazy">
             </div>
             <div class="modal-info">
                 <h2>${product.name}-${product.sku}</h2>
