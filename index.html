@@ -23,11 +23,20 @@
     <link rel="icon" type="image/svg+xml" href="image/logo.png">
     <meta name="theme-color" content="#4a4a4a">
 
+    <!-- Preconnect + Preload (perf) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" as="image" href="image/17-hero.webp?v=20260421" fetchpriority="high" type="image/webp">
+
+    <!-- Critical CSS loaded normally -->
     <link rel="stylesheet" href="css/style.css?v=20260421zz">
+    <!-- Fonts: async load (don't block render) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap"></noscript>
+    <!-- Font Awesome: async (only icons, not critical) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
 
     <!-- Schema.org: LocalBusiness (Florist) -->
     <script type="application/ld+json">
@@ -154,13 +163,18 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"พวงหรีดราคาเท่าไหร่","acceptedAnswer":{"@type":"Answer","text":"พวงหรีดของเราเริ่มต้นที่ 1,090 บาท สำหรับดอกไม้สด ส่วนพวงหรีดพัดลมเริ่ม 1,800 บาท และพวงหรีดพรีเมียม 4,000-7,000 บาท ราคาขึ้นอยู่กับแบบ ขนาด และชนิดของดอกไม้"}},{"@type":"Question","name":"ส่งพวงหรีดใช้เวลากี่ชั่วโมง","acceptedAnswer":{"@type":"Answer","text":"ในกรุงเทพและปริมณฑล ส่งภายใน 3 ชั่วโมงหลังยืนยันคำสั่งซื้อ ต่างจังหวัดใช้เวลา 6-12 ชั่วโมงขึ้นอยู่กับพื้นที่ ทุกออเดอร์มีรูปยืนยันส่งกลับให้"}},{"@type":"Question","name":"สั่งพวงหรีดอย่างไร","acceptedAnswer":{"@type":"Answer","text":"สั่งผ่าน LINE @wreathtoday ได้ตลอด 24 ชั่วโมง แจ้ง 1) ชื่อวัด/เลขศาลา 2) เวลาที่ต้องการให้ถึง 3) เลือกแบบพวงหรีด 4) ข้อความหน้าพวงหรีด จากนั้นโอนเงินและรับรูปยืนยันเมื่อส่งถึง"}},{"@type":"Question","name":"ส่งพวงหรีดต่างจังหวัดได้ไหม","acceptedAnswer":{"@type":"Answer","text":"ได้ครับ เราส่งทั่วประเทศทุกจังหวัด เช่น เชียงใหม่ ขอนแก่น ภูเก็ต ชลบุรี โคราช อุดรธานี สงขลา ฯลฯ ค่าส่งต่างจังหวัดเพิ่ม 200-500 บาทแล้วแต่พื้นที่"}},{"@type":"Question","name":"ชำระเงินอย่างไร","acceptedAnswer":{"@type":"Answer","text":"ชำระผ่านการโอนเงินธนาคาร พร้อมเพย์ หรือ QR Code ได้ทันที รับหลักฐานการโอนแล้วร้านจะเริ่มจัดทำพวงหรีดให้ทันที"}},{"@type":"Question","name":"พวงหรีดพัดลมกับดอกไม้สดต่างกันอย่างไร","acceptedAnswer":{"@type":"Answer","text":"พวงหรีดดอกไม้สดใช้ดอกไม้จริงจัดแบบประเพณี เหมาะกับงานศพทั่วไป ส่วนพวงหรีดพัดลมเป็นพัดลมจริงที่ครอบครัวผู้เสียชีวิตสามารถนำไปใช้งานต่อได้ เป็นการให้ของที่มีประโยชน์"}},{"@type":"Question","name":"สามารถเขียนข้อความหน้าพวงหรีดได้ไหม","acceptedAnswer":{"@type":"Answer","text":"ได้ครับ ลูกค้าสามารถกำหนดข้อความเองได้ เช่น ด้วยความอาลัยยิ่ง, ขอแสดงความเสียใจ, รำลึกด้วยใจ พร้อมชื่อผู้ส่ง ฟรีไม่มีค่าใช้จ่ายเพิ่ม"}}]}
     </script>
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WT5CLR6QRQ"></script>
+    <!-- Google Analytics 4 — defer & load after page ready -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-WT5CLR6QRQ');
+      window.addEventListener('load', function() {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-WT5CLR6QRQ';
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WT5CLR6QRQ');
+      });
     </script>
 </head>
 <body>
@@ -433,7 +447,7 @@
         </div>
     </div>
 
-    <script src="js/data.js?v=20260421"></script>
-    <script src="js/app.js?v=20260421"></script>
+    <script src="js/data.js?v=20260421" defer></script>
+    <script src="js/app.js?v=20260421" defer></script>
 </body>
 </html>
