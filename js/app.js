@@ -23,7 +23,9 @@ function initHeroImage() {
     const picks = PRODUCTS.filter(p => p.category === 'fresh' && p.price > 2000);
     if (picks.length === 0) return;
     const random = picks[Math.floor(Math.random() * picks.length)];
-    heroImg.src = webpUrl(random.image);
+    const heroSource = document.getElementById('heroSource');
+    if (heroSource) heroSource.srcset = webpUrl(random.image);
+    heroImg.src = imgUrl(random.image);
     heroImg.alt = random.name + ' - ' + random.sku;
 }
 
@@ -130,7 +132,8 @@ function createProductCard(product) {
                 ${badgeHTML}
                 <picture>
                     <source srcset="${webpUrl(product.image)}" type="image/webp">
-                    <img src="${imgUrl(product.image)}" alt="พวงหรีด${product.name} ${product.categoryName} ${product.description}" loading="lazy">
+                    <img src="${imgUrl(product.image)}" alt="พวงหรีด${product.name} ${product.categoryName} ${product.description}"
+                         width="400" height="500" loading="lazy" decoding="async">
                 </picture>
             </div>
             <div class="product-info">
@@ -189,7 +192,8 @@ function openProductModal(id) {
             <div class="modal-image">
                 <picture>
                     <source srcset="${webpUrl(product.image)}" type="image/webp">
-                    <img src="${imgUrl(product.image)}" alt="พวงหรีด${product.name} ${product.categoryName} ${product.description}" loading="lazy">
+                    <img src="${imgUrl(product.image)}" alt="พวงหรีด${product.name} ${product.categoryName} ${product.description}"
+                         width="800" height="1200" loading="lazy" decoding="async">
                 </picture>
             </div>
             <div class="modal-info">

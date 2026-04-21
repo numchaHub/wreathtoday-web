@@ -204,7 +204,11 @@
     <!-- Hero Banner -->
     <section class="hero-banner">
         <div class="hero-image">
-            <img id="heroImg" src="image/17.jpg" alt="พวงหรีด WreathToday" loading="eager">
+            <picture>
+                <source id="heroSource" srcset="image/17.webp?v=20260421" type="image/webp">
+                <img id="heroImg" src="image/17.jpg?v=20260421" alt="พวงหรีด WreathToday"
+                     width="1024" height="1536" loading="eager" fetchpriority="high" decoding="async">
+            </picture>
         </div>
         <div class="hero-content">
             <div class="container">
