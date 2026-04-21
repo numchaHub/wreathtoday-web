@@ -3,8 +3,9 @@
 // ============================================
 
 // Cache bust version - bump this when images are updated
-const IMG_VER = '20260420';
+const IMG_VER = '20260421';
 const imgUrl = (path) => `${path}?v=${IMG_VER}`;
+const webpUrl = (path) => `${path.replace(/\.jpg$/i, '.webp')}?v=${IMG_VER}`;
 
 document.addEventListener('DOMContentLoaded', () => {
     initHeroImage();
@@ -22,7 +23,7 @@ function initHeroImage() {
     const picks = PRODUCTS.filter(p => p.category === 'fresh' && p.price > 2000);
     if (picks.length === 0) return;
     const random = picks[Math.floor(Math.random() * picks.length)];
-    heroImg.src = imgUrl(random.image);
+    heroImg.src = webpUrl(random.image);
     heroImg.alt = random.name + ' - ' + random.sku;
 }
 
@@ -127,7 +128,10 @@ function createProductCard(product) {
         <div class="product-card" data-id="${product.id}">
             <div class="product-image">
                 ${badgeHTML}
-                <img src="${imgUrl(product.image)}" alt="พวงหรีด${product.name} ${product.categoryName} ${product.description}" loading="lazy">
+                <picture>
+                    <source srcset="${webpUrl(product.image)}" type="image/webp">
+                    <img src="${imgUrl(product.image)}" alt="พวงหรีด${product.name} ${product.categoryName} ${product.description}" loading="lazy">
+                </picture>
             </div>
             <div class="product-info">
                 <div class="product-price">
@@ -183,7 +187,10 @@ function openProductModal(id) {
     body.innerHTML = `
         <div class="modal-grid">
             <div class="modal-image">
-                <img src="${imgUrl(product.image)}" alt="พวงหรีด${product.name} ${product.categoryName} ${product.description}" loading="lazy">
+                <picture>
+                    <source srcset="${webpUrl(product.image)}" type="image/webp">
+                    <img src="${imgUrl(product.image)}" alt="พวงหรีด${product.name} ${product.categoryName} ${product.description}" loading="lazy">
+                </picture>
             </div>
             <div class="modal-info">
                 <h2>${product.name}-${product.sku}</h2>
