@@ -26,7 +26,7 @@ function initHeroImage() {
     if (picks.length === 0) return;
     const random = picks[Math.floor(Math.random() * picks.length)];
     const heroSource = document.getElementById('heroSource');
-    if (heroSource) heroSource.srcset = webpUrl(random.image);
+    if (heroSource) heroSource.srcset = webpThumbUrl(random.image);
     heroImg.src = imgUrl(random.image);
     heroImg.alt = random.name + ' - ' + random.sku;
 }

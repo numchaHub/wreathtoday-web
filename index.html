@@ -28,6 +28,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
+    <!-- Preload LCP hero image for fastest paint -->
+    <link rel="preload" as="image" href="image/17-sm.webp?v=20260422" type="image/webp" fetchpriority="high">
     <!-- Critical CSS loaded normally -->
     <link rel="stylesheet" href="css/style.css?v=20260422b">
     <!-- Thai font: async with display=optional (no CLS, fast FCP) -->
@@ -218,9 +220,9 @@
     <section class="hero-banner">
         <div class="hero-image">
             <picture>
-                <source id="heroSource" srcset="image/17.webp?v=20260421" type="image/webp">
-                <img id="heroImg" src="image/17.jpg?v=20260421" alt="พวงหรีด WreathToday"
-                     width="1024" height="1536" loading="eager" fetchpriority="high" decoding="async">
+                <source id="heroSource" srcset="image/17-sm.webp?v=20260422" type="image/webp">
+                <img id="heroImg" src="image/17.jpg?v=20260422" alt="พวงหรีด WreathToday"
+                     width="500" height="750" loading="eager" fetchpriority="high" decoding="async">
             </picture>
         </div>
         <div class="hero-content">
