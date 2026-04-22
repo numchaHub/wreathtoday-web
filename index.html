@@ -28,8 +28,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
-    <!-- Preload hero only on desktop (on mobile it's a faded background, not LCP) -->
-    <link rel="preload" as="image" href="image/17.webp?v=20260422" type="image/webp" fetchpriority="high" media="(min-width: 769px)">
+    <!-- Preload hero image (LCP element on all devices now) -->
+    <link rel="preload" as="image" href="image/17.webp?v=20260422" type="image/webp" fetchpriority="high">
     <!-- Critical CSS loaded normally -->
     <link rel="stylesheet" href="css/style.css?v=20260422b">
     <!-- Thai font: async with display=optional (no CLS, fast FCP) -->
@@ -219,9 +219,6 @@
     <section class="hero-banner">
         <div class="hero-image">
             <picture>
-                <!-- Mobile: small 500px version (used at 30% opacity as background) -->
-                <source media="(max-width: 768px)" srcset="image/17-sm.webp?v=20260422" type="image/webp">
-                <!-- Desktop: full 1024px for crisp hero -->
                 <source srcset="image/17.webp?v=20260422" type="image/webp">
                 <img src="image/17.jpg?v=20260422" alt="พวงหรีด WreathToday"
                      width="1024" height="1536" loading="eager" fetchpriority="high" decoding="async">
