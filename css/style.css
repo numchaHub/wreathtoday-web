@@ -28,6 +28,15 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { font-family: var(--font); font-size: 16px; line-height: 1.7; color: var(--text); background: var(--bg); }
+
+/* Reserve space for Font Awesome icons before FA CSS loads (prevents CLS) */
+i.fa, i.fas, i.fab, i.far, i.fal, i.fad {
+    display: inline-block;
+    min-width: 1em;
+    min-height: 1em;
+    text-align: center;
+    font-style: normal;
+}
 a { text-decoration: none; color: inherit; transition: var(--transition); }
 img { max-width: 100%; height: auto; display: block; }
 ul { list-style: none; }
