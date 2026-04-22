@@ -35,9 +35,8 @@
     <!-- Thai font: async with display=optional (no CLS, fast FCP) -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=optional" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=optional"></noscript>
-    <!-- Font Awesome: async -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <!-- Font Awesome: blocking (small FCP cost, but prevents icon CLS) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- Schema.org: LocalBusiness (Florist) -->
     <script type="application/ld+json">
@@ -416,7 +415,7 @@
         <div class="footer-logo-section">
             <div class="container">
                 <div class="footer-logo">
-                    <img src="image/logo.png" alt="WreathToday" style="height:48px;">
+                    <img src="image/logo.png" alt="WreathToday" width="198" height="48" style="height:48px;width:auto;">
                 </div>
             </div>
         </div>
