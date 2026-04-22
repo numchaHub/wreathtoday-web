@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero Preview — WreathToday</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+    --primary: #8B7355;
+    --primary-dark: #6B5740;
+    --accent: #c9a84c;
+    --accent-dark: #a8892f;
+    --text: #3d3529;
+    --bg: #fdfcfa;
+    --line-green: #06C755;
+    --gold: #d4b45e;
+    --dark: #2a2a2a;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Noto Sans Thai', sans-serif;
+    background: #f0eee8;
+    padding: 20px 0;
+    color: var(--text);
+    line-height: 1.7;
+}
+h2.opt-label {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    background: #333;
+    color: #fff;
+    padding: 8px 16px;
+    margin: 30px auto 0;
+    max-width: 420px;
+    border-radius: 8px 8px 0 0;
+}
+.opt-desc {
+    text-align: center;
+    font-size: 12px;
+    background: #555;
+    color: #ddd;
+    padding: 4px 16px;
+    max-width: 420px;
+    margin: 0 auto;
+}
+.phone-frame {
+    max-width: 420px;
+    margin: 0 auto 20px;
+    background: #fff;
+    border: 8px solid #222;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+/* ========== Shared styles across options ========== */
+.header {
+    background: #fff;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+.header .logo { font-weight: 700; font-size: 16px; color: var(--text); }
+.header .logo span { color: #999; font-size: 11px; font-weight: 400; margin-left: 6px; }
+.header .menu { color: #555; }
+.info-bar {
+    background: #555;
+    color: #fff;
+    font-size: 11px;
+    padding: 8px 10px;
+    text-align: center;
+}
+.info-bar i { color: var(--accent); margin-right: 3px; }
+.info-bar span { display: inline-block; margin: 0 8px; white-space: nowrap; }
+.cta-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 12px; }
+.btn {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-line { background: var(--line-green); color: #fff; }
+.btn-gold { background: var(--gold); color: #2a2a2a; }
+.btn-outline-gold { background: transparent; color: var(--gold); border: 1.5px solid var(--gold); }
+.badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 11px;
+    color: #ccc;
+    margin-top: 10px;
+}
+.badges i { color: var(--accent); margin-right: 4px; }
+
+/* ========== Current (for reference) ========== */
+.hero-current {
+    background: linear-gradient(135deg, #4a4a4a 0%, #3a3a3a 100%);
+    position: relative;
+    padding: 40px 20px;
+    min-height: 340px;
+    overflow: hidden;
+}
+.hero-current::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('image/17.webp') center / cover;
+    opacity: 0.3;
+}
+.hero-current-content { position: relative; color: #fff; }
+.hero-current h1 { font-size: 30px; line-height: 1.25; font-weight: 700; }
+.hero-current h1 span { color: var(--accent); display: block; }
+.hero-current p { font-size: 13px; color: #e0e0e0; margin-top: 10px; }
+
+/* ========== Option A: Hide image ========== */
+.hero-a {
+    background: linear-gradient(135deg, #4a4a4a 0%, #2a2a2a 100%);
+    padding: 40px 20px;
+    min-height: 340px;
+    color: #fff;
+}
+.hero-a h1 { font-size: 30px; line-height: 1.25; font-weight: 700; }
+.hero-a h1 span { color: var(--accent); display: block; }
+.hero-a p { font-size: 13px; color: #e0e0e0; margin-top: 10px; }
+
+/* ========== Option B: Lower opacity 15% ========== */
+.hero-b {
+    background: linear-gradient(135deg, #4a4a4a 0%, #3a3a3a 100%);
+    position: relative;
+    padding: 40px 20px;
+    min-height: 340px;
+    overflow: hidden;
+}
+.hero-b::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('image/17.webp') center / cover;
+    opacity: 0.15;
+}
+.hero-b-content { position: relative; color: #fff; }
+.hero-b h1 { font-size: 30px; line-height: 1.25; font-weight: 700; }
+.hero-b h1 span { color: var(--accent); display: block; }
+.hero-b p { font-size: 13px; color: #e0e0e0; margin-top: 10px; }
+
+/* ========== Option D: Stacked (image top, text below) ========== */
+.hero-d-image {
+    aspect-ratio: 16/10;
+    background: url('image/17.webp') center / cover;
+    background-color: #fdfcfa;
+}
+.hero-d-text {
+    background: linear-gradient(135deg, #4a4a4a 0%, #2a2a2a 100%);
+    color: #fff;
+    padding: 26px 20px 30px;
+}
+.hero-d h1 { font-size: 26px; line-height: 1.3; font-weight: 700; }
+.hero-d h1 span { color: var(--accent); display: block; }
+.hero-d p { font-size: 13px; color: #e0e0e0; margin-top: 8px; }
+
+/* ========== Option E: Minimalist (no photo) ========== */
+.hero-e {
+    background:
+        radial-gradient(circle at 0% 0%, rgba(201,168,76,0.15), transparent 40%),
+        radial-gradient(circle at 100% 100%, rgba(139,115,85,0.2), transparent 40%),
+        linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%);
+    padding: 50px 20px;
+    min-height: 340px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+.hero-e::before, .hero-e::after {
+    content: '\2766'; /* floral ornament */
+    position: absolute;
+    color: var(--gold);
+    opacity: 0.4;
+    font-size: 60px;
+}
+.hero-e::before { top: 20px; left: 20px; }
+.hero-e::after { bottom: 20px; right: 20px; transform: rotate(180deg); }
+.hero-e h1 {
+    font-size: 32px;
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    position: relative;
+}
+.hero-e h1 span {
+    color: var(--gold);
+    display: block;
+    font-weight: 500;
+    font-size: 26px;
+    margin-top: 6px;
+}
+.hero-e p {
+    font-size: 13px;
+    color: #ccc;
+    margin-top: 12px;
+    max-width: 280px;
+    position: relative;
+}
+
+/* ========== Option F: Featured product card ========== */
+.hero-f {
+    background: linear-gradient(135deg, #f5f0eb 0%, #ede4d6 100%);
+    padding: 24px 20px;
+}
+.hero-f h1 { font-size: 22px; font-weight: 700; color: var(--text); }
+.hero-f h1 span { color: var(--primary); }
+.hero-f-subtitle { font-size: 12px; color: #777; margin-top: 2px; }
+.feature-card {
+    display: flex;
+    background: #fff;
+    border-radius: 12px;
+    margin-top: 16px;
+    padding: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    gap: 12px;
+}
+.feature-card-img {
+    width: 110px;
+    aspect-ratio: 3/4;
+    background: url('image/17.webp') center / cover;
+    background-color: #fdfcfa;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+.feature-card-info { flex: 1; display: flex; flex-direction: column; }
+.feature-card-badge {
+    background: #c0392b;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    align-self: flex-start;
+    font-weight: 600;
+}
+.feature-card-name { font-size: 14px; font-weight: 600; margin: 6px 0 2px; }
+.feature-card-desc { font-size: 11px; color: #666; }
+.feature-card-price {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 18px;
+    margin: auto 0 6px;
+}
+.feature-card-cta {
+    background: var(--line-green);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* ========== Option G: Skip hero ========== */
+.hero-g-strip {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    padding: 16px;
+    text-align: center;
+}
+.hero-g-strip h1 { font-size: 20px; font-weight: 700; }
+.hero-g-strip p { font-size: 12px; margin-top: 2px; opacity: 0.9; }
+.hero-g-trust {
+    display: flex;
+    justify-content: space-around;
+    background: #fff;
+    padding: 14px 10px;
+    border-bottom: 1px solid #eee;
+}
+.hero-g-trust-item { text-align: center; flex: 1; }
+.hero-g-trust-item i { color: var(--accent); font-size: 20px; }
+.hero-g-trust-item span { display: block; font-size: 10px; margin-top: 4px; color: #666; }
+.hero-g-filter {
+    display: flex;
+    gap: 8px;
+    padding: 14px;
+    background: #fff;
+    overflow-x: auto;
+}
+.hero-g-filter button {
+    padding: 6px 16px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 16px;
+    font-size: 12px;
+    font-family: inherit;
+    white-space: nowrap;
+}
+.hero-g-filter button.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.hero-g-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 12px;
+    background: #fafafa;
+}
+.hero-g-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.hero-g-card-img {
+    aspect-ratio: 3/4;
+    background: url('image/17.webp') center / cover;
+    background-color: #fdfcfa;
+}
+.hero-g-card-body { padding: 8px; }
+.hero-g-card-price { color: var(--primary); font-weight: 700; font-size: 14px; }
+.hero-g-card-name { font-size: 11px; color: #666; margin-top: 2px; }
+
+/* ========== Option H: Dark Luxury ========== */
+.hero-h {
+    background:
+        radial-gradient(ellipse at top, rgba(212,180,94,0.08), transparent 50%),
+        linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+    padding: 50px 24px;
+    min-height: 360px;
+    color: #fff;
+    position: relative;
+}
+.hero-h::before {
+    content: '';
+    position: absolute;
+    top: 16px; left: 16px;
+    width: 40px; height: 40px;
+    border-top: 2px solid var(--gold);
+    border-left: 2px solid var(--gold);
+    opacity: 0.6;
+}
+.hero-h::after {
+    content: '';
+    position: absolute;
+    bottom: 16px; right: 16px;
+    width: 40px; height: 40px;
+    border-bottom: 2px solid var(--gold);
+    border-right: 2px solid var(--gold);
+    opacity: 0.6;
+}
+.hero-h-sub {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+.hero-h h1 {
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 300;
+    font-family: 'Noto Sans Thai', serif;
+}
+.hero-h h1 span {
+    color: var(--gold);
+    display: block;
+    font-weight: 600;
+    margin-top: 4px;
+}
+.hero-h p {
+    font-size: 13px;
+    color: #bbb;
+    margin: 14px 0;
+    max-width: 280px;
+}
+.hero-h .badges { color: #999; }
+.hero-h .badges i { color: var(--gold); }
+
+/* Top intro */
+.intro {
+    max-width: 420px;
+    margin: 0 auto 20px;
+    padding: 0 12px;
+    color: #333;
+    text-align: center;
+}
+.intro h1 { font-size: 20px; margin-bottom: 8px; }
+.intro p { font-size: 13px; color: #666; }
+</style>
+</head>
+<body>
+
+<div class="intro">
+    <h1>🎨 Hero Preview — 7 แบบ</h1>
+    <p>เลื่อนดูทุก option เปรียบเทียบบนหน้าจอมือถือจริง<br>แจ้งผมว่าชอบตัวไหน</p>
+</div>
+
+<!-- ================ CURRENT (for reference) ================ -->
+<h2 class="opt-label">🔘 Current — ของตอนนี้ (เทียบ)</h2>
+<div class="opt-desc">รูปพื้นหลัง opacity 30% + ข้อความซ้อน</div>
+<div class="phone-frame">
+    <div class="header"><div class="logo">WREATHTODAY</div><div class="menu"><i class="fas fa-bars"></i></div></div>
+    <div class="info-bar"><span><i class="fas fa-truck"></i>ส่งฟรี</span><span><i class="fas fa-bolt"></i>ด่วน</span><span><i class="fas fa-camera"></i>รูปยืนยัน</span></div>
+    <section class="hero-current">
+        <div class="hero-current-content">
+            <h1>สั่งพวงหรีด<span>ส่งทั่วประเทศ 24 ชม.</span></h1>
+            <p>มอบพวงหรีดแด่ผู้วายชนม์ ด้วยบริการคุณภาพ สั่งง่าย ส่งไว ส่งรูปยืนยันทุกออเดอร์</p>
+            <div class="cta-row">
+                <a class="btn btn-primary">ดูพวงหรีดทั้งหมด</a>
+                <a class="btn btn-line"><i class="fab fa-line"></i> สั่งผ่าน LINE</a>
+            </div>
+            <div class="badges">
+                <span><i class="fas fa-check-circle"></i>ส่งฟรี</span>
+                <span><i class="fas fa-check-circle"></i>24 ชม.</span>
+                <span><i class="fas fa-check-circle"></i>รูปยืนยัน</span>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ================ OPTION A ================ -->
+<h2 class="opt-label">🟢 Option A — ซ่อนรูปบนมือถือ</h2>
+<div class="opt-desc">พื้นหลังเข้มล้วน ข้อความเด่นชัด</div>
+<div class="phone-frame">
+    <div class="header"><div class="logo">WREATHTODAY</div><div class="menu"><i class="fas fa-bars"></i></div></div>
+    <div class="info-bar"><span><i class="fas fa-truck"></i>ส่งฟรี</span><span><i class="fas fa-bolt"></i>ด่วน</span><span><i class="fas fa-camera"></i>รูปยืนยัน</span></div>
+    <section class="hero-a">
+        <h1>สั่งพวงหรีด<span>ส่งทั่วประเทศ 24 ชม.</span></h1>
+        <p>มอบพวงหรีดแด่ผู้วายชนม์ ด้วยบริการคุณภาพ สั่งง่าย ส่งไว ส่งรูปยืนยันทุกออเดอร์</p>
+        <div class="cta-row">
+            <a class="btn btn-primary">ดูพวงหรีดทั้งหมด</a>
+            <a class="btn btn-line"><i class="fab fa-line"></i> สั่งผ่าน LINE</a>
+        </div>
+        <div class="badges">
+            <span><i class="fas fa-check-circle"></i>ส่งฟรี</span>
+            <span><i class="fas fa-check-circle"></i>24 ชม.</span>
+            <span><i class="fas fa-check-circle"></i>รูปยืนยัน</span>
+        </div>
+    </section>
+</div>
+
+<!-- ================ OPTION B ================ -->
+<h2 class="opt-label">🟡 Option B — รูป opacity 15% (จางกว่าเดิม)</h2>
+<div class="opt-desc">รูปบางมาก เหลือแค่เท็กซ์เจอร์</div>
+<div class="phone-frame">
+    <div class="header"><div class="logo">WREATHTODAY</div><div class="menu"><i class="fas fa-bars"></i></div></div>
+    <div class="info-bar"><span><i class="fas fa-truck"></i>ส่งฟรี</span><span><i class="fas fa-bolt"></i>ด่วน</span><span><i class="fas fa-camera"></i>รูปยืนยัน</span></div>
+    <section class="hero-b">
+        <div class="hero-b-content">
+            <h1>สั่งพวงหรีด<span>ส่งทั่วประเทศ 24 ชม.</span></h1>
+            <p>มอบพวงหรีดแด่ผู้วายชนม์ ด้วยบริการคุณภาพ สั่งง่าย ส่งไว ส่งรูปยืนยันทุกออเดอร์</p>
+            <div class="cta-row">
+                <a class="btn btn-primary">ดูพวงหรีดทั้งหมด</a>
+                <a class="btn btn-line"><i class="fab fa-line"></i> สั่งผ่าน LINE</a>
+            </div>
+            <div class="badges">
+                <span><i class="fas fa-check-circle"></i>ส่งฟรี</span>
+                <span><i class="fas fa-check-circle"></i>24 ชม.</span>
+                <span><i class="fas fa-check-circle"></i>รูปยืนยัน</span>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ================ OPTION D ================ -->
+<h2 class="opt-label">🔥 Option D — Stacked (รูปบน ข้อความล่าง)</h2>
+<div class="opt-desc">รูปใหญ่ชัด opacity 100% + ข้อความแยกด้านล่าง</div>
+<div class="phone-frame">
+    <div class="header"><div class="logo">WREATHTODAY</div><div class="menu"><i class="fas fa-bars"></i></div></div>
+    <div class="info-bar"><span><i class="fas fa-truck"></i>ส่งฟรี</span><span><i class="fas fa-bolt"></i>ด่วน</span><span><i class="fas fa-camera"></i>รูปยืนยัน</span></div>
+    <section class="hero-d">
+        <div class="hero-d-image"></div>
+        <div class="hero-d-text">
+            <h1>สั่งพวงหรีด<span>ส่งทั่วประเทศ 24 ชม.</span></h1>
+            <p>มอบพวงหรีดแด่ผู้วายชนม์ ด้วยบริการคุณภาพ สั่งง่าย ส่งไว</p>
+            <div class="cta-row">
+                <a class="btn btn-primary">ดูพวงหรีดทั้งหมด</a>
+                <a class="btn btn-line"><i class="fab fa-line"></i> สั่ง LINE</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ================ OPTION E ================ -->
+<h2 class="opt-label">🎨 Option E — Elegant Minimalist</h2>
+<div class="opt-desc">ไม่มีรูป, gradient หรู + ดอกไม้มุม</div>
+<div class="phone-frame">
+    <div class="header"><div class="logo">WREATHTODAY</div><div class="menu"><i class="fas fa-bars"></i></div></div>
+    <div class="info-bar"><span><i class="fas fa-truck"></i>ส่งฟรี</span><span><i class="fas fa-bolt"></i>ด่วน</span><span><i class="fas fa-camera"></i>รูปยืนยัน</span></div>
+    <section class="hero-e">
+        <h1>สั่งพวงหรีด<span>ส่งทั่วประเทศ 24 ชม.</span></h1>
+        <p>มอบพวงหรีดแด่ผู้วายชนม์ ด้วยบริการคุณภาพ สั่งง่าย ส่งไว ส่งรูปยืนยัน</p>
+        <div class="cta-row">
+            <a class="btn btn-gold">ดูพวงหรีดทั้งหมด</a>
+            <a class="btn btn-line"><i class="fab fa-line"></i> LINE</a>
+        </div>
+        <div class="badges">
+            <span><i class="fas fa-check-circle"></i>ส่งฟรี</span>
+            <span><i class="fas fa-check-circle"></i>24 ชม.</span>
+            <span><i class="fas fa-check-circle"></i>รูปยืนยัน</span>
+        </div>
+    </section>
+</div>
+
+<!-- ================ OPTION F ================ -->
+<h2 class="opt-label">💡 Option F — Featured Product Card</h2>
+<div class="opt-desc">การ์ดสินค้าเด่นเป็น hero</div>
+<div class="phone-frame">
+    <div class="header"><div class="logo">WREATHTODAY</div><div class="menu"><i class="fas fa-bars"></i></div></div>
+    <div class="info-bar"><span><i class="fas fa-truck"></i>ส่งฟรี</span><span><i class="fas fa-bolt"></i>ด่วน</span><span><i class="fas fa-camera"></i>รูปยืนยัน</span></div>
+    <section class="hero-f">
+        <h1>สั่งพวงหรีด <span>ส่งทั่วประเทศ 24 ชม.</span></h1>
+        <div class="hero-f-subtitle">พวงหรีดยอดนิยมวันนี้</div>
+        <div class="feature-card">
+            <div class="feature-card-img"></div>
+            <div class="feature-card-info">
+                <span class="feature-card-badge">ขายดี</span>
+                <div class="feature-card-name">ดอกไม้สดพรีเมียม</div>
+                <div class="feature-card-desc">กุหลาบ + ลิลลี่ + คาร์เนชัน</div>
+                <div class="feature-card-price">฿2,500</div>
+                <button class="feature-card-cta"><i class="fab fa-line"></i> สั่งเลย</button>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ================ OPTION G ================ -->
+<h2 class="opt-label">🚀 Option G — Skip Hero (ไปที่สินค้าเลย)</h2>
+<div class="opt-desc">ไม่มี hero ใหญ่, แสดงสินค้าทันที</div>
+<div class="phone-frame">
+    <div class="header"><div class="logo">WREATHTODAY</div><div class="menu"><i class="fas fa-bars"></i></div></div>
+    <div class="hero-g-strip">
+        <h1>พวงหรีด ส่งทั่วประเทศ 24 ชม.</h1>
+        <p>สั่งง่าย ส่งไว มีรูปยืนยัน</p>
+    </div>
+    <div class="hero-g-trust">
+        <div class="hero-g-trust-item"><i class="fas fa-truck"></i><span>ส่งฟรี</span></div>
+        <div class="hero-g-trust-item"><i class="fas fa-bolt"></i><span>ด่วน 24 ชม.</span></div>
+        <div class="hero-g-trust-item"><i class="fas fa-camera"></i><span>รูปยืนยัน</span></div>
+        <div class="hero-g-trust-item"><i class="fas fa-shield-alt"></i><span>ปลอดภัย</span></div>
+    </div>
+    <div class="hero-g-filter">
+        <button class="active">ทั้งหมด</button>
+        <button>ดอกไม้สด</button>
+        <button>พัดลม</button>
+        <button>พรีเมียม</button>
+    </div>
+    <div class="hero-g-grid">
+        <div class="hero-g-card"><div class="hero-g-card-img"></div><div class="hero-g-card-body"><div class="hero-g-card-price">฿1,290</div><div class="hero-g-card-name">ดอกไม้สด A</div></div></div>
+        <div class="hero-g-card"><div class="hero-g-card-img"></div><div class="hero-g-card-body"><div class="hero-g-card-price">฿1,590</div><div class="hero-g-card-name">ดอกไม้สด B</div></div></div>
+        <div class="hero-g-card"><div class="hero-g-card-img"></div><div class="hero-g-card-body"><div class="hero-g-card-price">฿2,500</div><div class="hero-g-card-name">พรีเมียม</div></div></div>
+        <div class="hero-g-card"><div class="hero-g-card-img"></div><div class="hero-g-card-body"><div class="hero-g-card-price">฿1,890</div><div class="hero-g-card-name">พัดลม</div></div></div>
+    </div>
+</div>
+
+<!-- ================ OPTION H ================ -->
+<h2 class="opt-label">🌙 Option H — Dark Luxury</h2>
+<div class="opt-desc">พื้นดำ + ตัวอักษรทอง + มุมตกแต่ง</div>
+<div class="phone-frame">
+    <div class="header"><div class="logo">WREATHTODAY</div><div class="menu"><i class="fas fa-bars"></i></div></div>
+    <div class="info-bar"><span><i class="fas fa-truck"></i>ส่งฟรี</span><span><i class="fas fa-bolt"></i>ด่วน</span><span><i class="fas fa-camera"></i>รูปยืนยัน</span></div>
+    <section class="hero-h">
+        <div class="hero-h-sub">PREMIUM WREATH SERVICE</div>
+        <h1>สั่งพวงหรีด<span>ส่งทั่วประเทศ 24 ชม.</span></h1>
+        <p>มอบพวงหรีดแด่ผู้วายชนม์ ด้วยบริการคุณภาพระดับพรีเมียม สั่งง่าย ส่งไว</p>
+        <div class="cta-row">
+            <a class="btn btn-gold">ดูพวงหรีดทั้งหมด</a>
+            <a class="btn btn-outline-gold"><i class="fab fa-line"></i> LINE</a>
+        </div>
+        <div class="badges">
+            <span><i class="fas fa-check-circle"></i>ส่งฟรี</span>
+            <span><i class="fas fa-check-circle"></i>24 ชม.</span>
+            <span><i class="fas fa-check-circle"></i>รูปยืนยัน</span>
+        </div>
+    </section>
+</div>
+
+<div class="intro" style="margin-top: 40px;">
+    <p style="font-size: 12px; color: #999;">แจ้งผมว่าชอบตัวไหน (A / B / D / E / F / G / H) แล้วจะเอาไปใช้จริง</p>
+</div>
+
+</body>
+</html>
