@@ -432,17 +432,23 @@ ul { list-style: none; }
 
 /* Mobile responsive for new sections */
 @media (max-width: 768px) {
-    /* --- Hero: Option A — hide image on mobile (clean, fast) --- */
+    /* --- Hero: Option A — hide image, BIG h1 (becomes LCP for fast paint) --- */
     .hero-banner {
         background: linear-gradient(135deg, #4a4a4a 0%, #2a2a2a 100%);
         min-height: auto;
     }
     .hero-image { display: none; }
     .hero-content {
-        padding: 40px 20px;
-        min-height: 340px;
+        padding: 48px 20px 44px;
+        min-height: 380px;
     }
-    .hero-text h1 { font-size: 32px; }
+    .hero-text h1 {
+        font-size: clamp(38px, 9vw, 48px);
+        line-height: 1.15;
+        margin-bottom: 16px;
+        letter-spacing: -0.5px;
+    }
+    .hero-text h1 span { font-size: 0.85em; }
     .hero-text p { font-size: 15px; }
 
     .step-arrow { display: none; }
