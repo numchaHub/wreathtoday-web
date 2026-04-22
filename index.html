@@ -28,12 +28,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
+    <!-- Preload Google Fonts CSS (fast, prevents CLS from font swap) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap">
     <!-- Critical CSS loaded normally -->
-    <link rel="stylesheet" href="css/style.css?v=20260421zz">
-    <!-- Fonts: async load (don't block render) -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap"></noscript>
-    <!-- Font Awesome: async (only icons, not critical) -->
+    <link rel="stylesheet" href="css/style.css?v=20260422">
+    <!-- Thai font: blocking load to prevent CLS (FCP cost ~100ms, CLS fix ~0.5) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap">
+    <!-- Font Awesome: async (icons can swap without big CLS) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
 
@@ -182,7 +183,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="/" class="logo" aria-label="WreathToday หน้าแรก">
-                    <img src="image/logo.png" alt="WreathToday" class="logo-img">
+                    <img src="image/logo.png" alt="WreathToday" class="logo-img" width="60" height="60">
                 </a>
                 <nav class="nav" id="nav" aria-label="เมนูหลัก">
                     <a href="#" class="nav-link active" data-cat="all">ทั้งหมด</a>
