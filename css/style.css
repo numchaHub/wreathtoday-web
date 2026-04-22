@@ -423,40 +423,18 @@ ul { list-style: none; }
 
 /* Mobile responsive for new sections */
 @media (max-width: 768px) {
-    /* --- Hero: Stacked layout (image on top, text below) --- */
+    /* --- Hero: Option A — hide image on mobile (clean, fast) --- */
     .hero-banner {
+        background: linear-gradient(135deg, #4a4a4a 0%, #2a2a2a 100%);
         min-height: auto;
-        display: flex;
-        flex-direction: column;
     }
-    .hero-image {
-        position: relative;        /* out of absolute positioning */
-        width: 100%;
-        opacity: 1;                /* full opacity — it's now the real image, not bg */
-        aspect-ratio: 4/3;         /* landscape frame for portrait wreath */
-        order: 1;                  /* on top */
-    }
-    .hero-image picture {
-        aspect-ratio: auto;
-        width: 100%;
-        height: 100%;
-        filter: none;              /* remove drop-shadow */
-        background: #fdfcfa;       /* wreath image bg color */
-    }
-    .hero-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;         /* fill frame, crop edges */
-        object-position: center 35%; /* show wreath body (top part) */
-    }
-    .hero-image::after { display: none; }
+    .hero-image { display: none; }
     .hero-content {
-        order: 2;
-        padding: 30px 20px;
-        min-height: auto;
+        padding: 40px 20px;
+        min-height: 340px;
     }
-    .hero-text h1 { font-size: 30px; }
-    .hero-text p { font-size: 14px; }
+    .hero-text h1 { font-size: 32px; }
+    .hero-text p { font-size: 15px; }
 
     .step-arrow { display: none; }
     .step-card { min-width: 140px; max-width: 48%; }
