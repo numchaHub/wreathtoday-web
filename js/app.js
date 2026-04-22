@@ -3,9 +3,11 @@
 // ============================================
 
 // Cache bust version - bump this when images are updated
-const IMG_VER = '20260421';
+const IMG_VER = '20260422';
 const imgUrl = (path) => `${path}?v=${IMG_VER}`;
 const webpUrl = (path) => `${path.replace(/\.jpg$/i, '.webp')}?v=${IMG_VER}`;
+// Small version (500px wide) for grid cards — saves 70% bandwidth
+const webpThumbUrl = (path) => `${path.replace(/\.jpg$/i, '-sm.webp')}?v=${IMG_VER}`;
 
 document.addEventListener('DOMContentLoaded', () => {
     initHeroImage();
@@ -131,7 +133,7 @@ function createProductCard(product) {
             <div class="product-image">
                 ${badgeHTML}
                 <picture>
-                    <source srcset="${webpUrl(product.image)}" type="image/webp">
+                    <source srcset="${webpThumbUrl(product.image)}" type="image/webp">
                     <img src="${imgUrl(product.image)}" alt="พวงหรีด${product.name} ${product.categoryName} ${product.description}"
                          width="400" height="500" loading="lazy" decoding="async">
                 </picture>
