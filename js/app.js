@@ -10,7 +10,7 @@ const webpUrl = (path) => `${path.replace(/\.jpg$/i, '.webp')}?v=${IMG_VER}`;
 const webpThumbUrl = (path) => `${path.replace(/\.jpg$/i, '-sm.webp')}?v=${IMG_VER}`;
 
 document.addEventListener('DOMContentLoaded', () => {
-    initHeroImage();
+    // Hero is now static (17-sm.webp, preloaded) — no JS swap to keep LCP fast
     initMobileMenu();
     initBackToTop();
     initFilters();
@@ -18,18 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProducts('all', 'popular');
 });
 
-// --- Hero Image (random fresh wreath > 2000) ---
-function initHeroImage() {
-    const heroImg = document.getElementById('heroImg');
-    if (!heroImg || typeof PRODUCTS === 'undefined') return;
-    const picks = PRODUCTS.filter(p => p.category === 'fresh' && p.price > 2000);
-    if (picks.length === 0) return;
-    const random = picks[Math.floor(Math.random() * picks.length)];
-    const heroSource = document.getElementById('heroSource');
-    if (heroSource) heroSource.srcset = webpThumbUrl(random.image);
-    heroImg.src = imgUrl(random.image);
-    heroImg.alt = random.name + ' - ' + random.sku;
-}
+// --- Hero Image (disabled — kept for reference)
+// Random fresh wreath > 2000 on load. Re-enable only if LCP stays < 2.5s.
+// function initHeroImage() {
+//     const heroImg = document.getElementById('heroImg');
+//     if (!heroImg || typeof PRODUCTS === 'undefined') return;
+//     const picks = PRODUCTS.filter(p => p.category === 'fresh' && p.price > 2000);
+//     if (picks.length === 0) return;
+//     const random = picks[Math.floor(Math.random() * picks.length)];
+//     const heroSource = document.getElementById('heroSource');
+//     if (heroSource) heroSource.srcset = webpThumbUrl(random.image);
+//     heroImg.src = imgUrl(random.image);
+//     heroImg.alt = random.name + ' - ' + random.sku;
+// }
 
 // --- State ---
 let currentCat = 'all';
