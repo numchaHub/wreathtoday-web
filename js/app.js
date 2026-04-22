@@ -15,8 +15,70 @@ document.addEventListener('DOMContentLoaded', () => {
     initBackToTop();
     initFilters();
     initModal();
+    initConversionTracking();
     renderProducts('all', 'popular');
 });
+
+// --- GA4 Conversion Tracking ---
+// Tracks LINE clicks, phone clicks, and product modal views.
+// Event delegation: one listener on document catches every click site-wide.
+function initConversionTracking() {
+    // Safe wrapper: gtag loads async after window.load, so it may not exist yet on early clicks
+    const track = (eventName, params) => {
+        if (typeof gtag === 'function') {
+            gtag('event', eventName, params || {});
+        } else {
+            // Queue until gtag is ready
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push(['event', eventName, params || {}]);
+        }
+    };
+
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (!link) return;
+        const href = link.getAttribute('href') || '';
+
+        // LINE click — the main conversion
+        if (href.includes('line.me')) {
+            // Try to extract product name + price from nearby product card or modal
+            const card = link.closest('.product-card');
+            const modal = link.closest('.modal-info');
+            let productName = '';
+            let productPrice = 0;
+
+            if (card) {
+                const id = parseInt(card.dataset.id);
+                const product = typeof PRODUCTS !== 'undefined' ? PRODUCTS.find(p => p.id === id) : null;
+                if (product) {
+                    productName = product.name + '-' + product.sku;
+                    productPrice = product.price;
+                }
+            } else if (modal) {
+                const h2 = modal.querySelector('h2');
+                const priceEl = modal.querySelector('.price-current');
+                if (h2) productName = h2.textContent.trim();
+                if (priceEl) productPrice = parseInt(priceEl.textContent.replace(/[^\d]/g, '')) || 0;
+            }
+
+            track('line_click', {
+                source: card ? 'product_card' : modal ? 'product_modal' : 'other',
+                product_name: productName,
+                value: productPrice,
+                currency: 'THB'
+            });
+            return;
+        }
+
+        // Phone call click
+        if (href.startsWith('tel:')) {
+            track('phone_click', {
+                phone_number: href.replace('tel:', '')
+            });
+            return;
+        }
+    });
+}
 
 // --- Hero Image (disabled — kept for reference)
 // Random fresh wreath > 2000 on load. Re-enable only if LCP stays < 2.5s.
@@ -175,6 +237,21 @@ function initModal() {
 function openProductModal(id) {
     const product = PRODUCTS.find(p => p.id === id);
     if (!product) return;
+
+    // GA4: view_item (ecommerce-standard event — useful funnel metric)
+    if (typeof gtag === 'function') {
+        gtag('event', 'view_item', {
+            currency: 'THB',
+            value: product.price,
+            items: [{
+                item_id: product.sku,
+                item_name: product.name,
+                item_category: product.categoryName,
+                price: product.price,
+                quantity: 1
+            }]
+        });
+    }
 
     const overlay = document.getElementById('modalOverlay');
     const body = document.getElementById('modalBody');
