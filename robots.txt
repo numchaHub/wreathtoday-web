@@ -1,11 +1,11 @@
 # WreathToday - robots.txt
-# https://www.wreathtoday.com
+# https://wreathtoday.com
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.wreathtoday.com/sitemap.xml
+Sitemap: https://wreathtoday.com/sitemap.xml
 
 # Disallow private/system files
 Disallow: /.claude/

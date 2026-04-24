@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- หน้าแรก (single-page app) -->
     <url>
-        <loc>https://www.wreathtoday.com/</loc>
+        <loc>https://wreathtoday.com/</loc>
         <lastmod>2026-04-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -10,19 +10,19 @@
 
     <!-- หมวดหมู่ (anchor links — Google จะ index เป็นหน้าแรกเดียวกัน) -->
     <url>
-        <loc>https://www.wreathtoday.com/#fresh</loc>
+        <loc>https://wreathtoday.com/#fresh</loc>
         <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/#fan</loc>
+        <loc>https://wreathtoday.com/#fan</loc>
         <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/#premium</loc>
+        <loc>https://wreathtoday.com/#premium</loc>
         <lastmod>2026-04-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -30,7 +30,7 @@
 
     <!-- Blog -->
     <url>
-        <loc>https://www.wreathtoday.com/blog.html</loc>
+        <loc>https://wreathtoday.com/blog.html</loc>
         <lastmod>2026-04-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -38,7 +38,7 @@
 
     <!-- Corporate B2B Landing Page -->
     <url>
-        <loc>https://www.wreathtoday.com/corporate.html</loc>
+        <loc>https://wreathtoday.com/corporate.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
@@ -46,7 +46,7 @@
 
     <!-- Temple Hub -->
     <url>
-        <loc>https://www.wreathtoday.com/temple/</loc>
+        <loc>https://wreathtoday.com/temple/</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -54,151 +54,151 @@
 
     <!-- Temple pages -->
     <url>
-        <loc>https://www.wreathtoday.com/temple/wat-thepsirin.html</loc>
+        <loc>https://wreathtoday.com/temple/wat-thepsirin.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/temple/wat-thatthong.html</loc>
+        <loc>https://wreathtoday.com/temple/wat-thatthong.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/temple/wat-somanas.html</loc>
+        <loc>https://wreathtoday.com/temple/wat-somanas.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/temple/wat-makut.html</loc>
+        <loc>https://wreathtoday.com/temple/wat-makut.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/temple/wat-threethotsathep.html</loc>
+        <loc>https://wreathtoday.com/temple/wat-threethotsathep.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/temple/wat-thepleela.html</loc>
+        <loc>https://wreathtoday.com/temple/wat-thepleela.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/temple/wat-bowon.html</loc>
+        <loc>https://wreathtoday.com/temple/wat-bowon.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/temple/wat-benchamabophit.html</loc>
+        <loc>https://wreathtoday.com/temple/wat-benchamabophit.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/temple/wat-phrasimahathat.html</loc>
+        <loc>https://wreathtoday.com/temple/wat-phrasimahathat.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/temple/wat-rajathivas.html</loc>
+        <loc>https://wreathtoday.com/temple/wat-rajathivas.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/temple/wat-hualamphong.html</loc>
+        <loc>https://wreathtoday.com/temple/wat-hualamphong.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/blog/how-to-choose-wreath.html</loc>
+        <loc>https://wreathtoday.com/blog/how-to-choose-wreath.html</loc>
         <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/blog/funeral-etiquette.html</loc>
+        <loc>https://wreathtoday.com/blog/funeral-etiquette.html</loc>
         <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/blog/wreath-message-examples.html</loc>
+        <loc>https://wreathtoday.com/blog/wreath-message-examples.html</loc>
         <lastmod>2026-04-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/blog/flower-meanings.html</loc>
+        <loc>https://wreathtoday.com/blog/flower-meanings.html</loc>
         <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/blog/order-online-guide.html</loc>
+        <loc>https://wreathtoday.com/blog/order-online-guide.html</loc>
         <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/blog/wreath-price-guide.html</loc>
+        <loc>https://wreathtoday.com/blog/wreath-price-guide.html</loc>
         <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/blog/fresh-vs-fan-wreath.html</loc>
+        <loc>https://wreathtoday.com/blog/fresh-vs-fan-wreath.html</loc>
         <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/blog/wreath-bangkok.html</loc>
+        <loc>https://wreathtoday.com/blog/wreath-bangkok.html</loc>
         <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/blog/wreath-chiangmai.html</loc>
+        <loc>https://wreathtoday.com/blog/wreath-chiangmai.html</loc>
         <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/blog/bangkok-temples-guide.html</loc>
+        <loc>https://wreathtoday.com/blog/bangkok-temples-guide.html</loc>
         <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/blog/wreath-nonthaburi.html</loc>
+        <loc>https://wreathtoday.com/blog/wreath-nonthaburi.html</loc>
         <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/blog/wreath-samutprakan.html</loc>
+        <loc>https://wreathtoday.com/blog/wreath-samutprakan.html</loc>
         <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/blog/wreath-pathumthani.html</loc>
+        <loc>https://wreathtoday.com/blog/wreath-pathumthani.html</loc>
         <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.wreathtoday.com/blog/when-to-send-wreath.html</loc>
+        <loc>https://wreathtoday.com/blog/when-to-send-wreath.html</loc>
         <lastmod>2026-04-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
