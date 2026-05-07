@@ -204,6 +204,74 @@
         <priority>0.9</priority>
     </url>
 
+    <!-- Bangkok district pages (Priority 2 SEO) -->
+    <url>
+        <loc>https://wreathtoday.com/area/</loc>
+        <lastmod>2026-05-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://wreathtoday.com/area/sukhumvit.html</loc>
+        <lastmod>2026-05-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://wreathtoday.com/area/huai-khwang.html</loc>
+        <lastmod>2026-05-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://wreathtoday.com/area/lat-phrao.html</loc>
+        <lastmod>2026-05-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://wreathtoday.com/area/bang-kapi.html</loc>
+        <lastmod>2026-05-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://wreathtoday.com/area/ramintra.html</loc>
+        <lastmod>2026-05-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://wreathtoday.com/area/bang-na.html</loc>
+        <lastmod>2026-05-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://wreathtoday.com/area/don-mueang.html</loc>
+        <lastmod>2026-05-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://wreathtoday.com/area/dusit.html</loc>
+        <lastmod>2026-05-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://wreathtoday.com/area/pathumwan.html</loc>
+        <lastmod>2026-05-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://wreathtoday.com/area/bang-sue.html</loc>
+        <lastmod>2026-05-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
     <!-- Long-tail keyword pages (Priority 1 SEO) -->
     <url>
         <loc>https://wreathtoday.com/blog/wreath-for-parents.html</loc>
