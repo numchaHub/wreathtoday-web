@@ -1,0 +1,13 @@
+# Migration helper files (contain private deploy info)
+migration-answers*.md
+migration-questions*.md
+
+# Local-only generator script (already deleted)
+_gen_districts.py
+_image_seo.py
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
