@@ -1,0 +1,25 @@
+name: Deploy to Droplet
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: 157.230.43.169
+          username: root
+          key: ${{ secrets.DROPLET_SSH_KEY }}
+          port: 22
+          script: |
+            cd /var/www/wreathtoday
+            git pull origin main
+            echo "✓ Deploy completed at $(date)"
+            echo "✓ Latest commit:"
+            git log -1 --oneline
