@@ -690,21 +690,23 @@ ul { list-style: none; }
 
     /* Hero — refined */
     .hero-banner { min-height: auto; }
-    .hero-content { padding: 36px 0 32px; min-height: auto; }
+    .hero-content { padding: 24px 0 22px; min-height: auto; }
     .hero-text { max-width: 100%; }
     .hero-text h1 {
-        font-size: clamp(28px, 7vw, 38px);
+        font-size: clamp(22px, 5.5vw, 30px);
         line-height: 1.2;
-        margin-bottom: 12px;
-        letter-spacing: -0.3px;
+        margin-bottom: 10px;
+        letter-spacing: -0.2px;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
-    .hero-text h1 span { font-size: 0.85em; display: inline-block; }
-    .hero-text p { font-size: 14px; margin-bottom: 18px; }
-    .hero-cta { gap: 8px; margin-bottom: 16px; }
-    .hero-cta .btn-lg { padding: 12px 22px; font-size: 14px; flex: 1; justify-content: center; min-width: 0; }
+    .hero-text h1 span { font-size: 0.82em; display: inline-block; }
+    .hero-text p { font-size: 13.5px; margin-bottom: 14px; line-height: 1.55; }
+    .hero-cta { gap: 8px; margin-bottom: 12px; }
+    .hero-cta .btn-lg { padding: 11px 18px; font-size: 13.5px; flex: 1; justify-content: center; min-width: 0; }
     .hero-badges {
-        gap: 8px 14px;
-        font-size: 12px;
+        gap: 6px 12px;
+        font-size: 11.5px;
         flex-direction: row;
     }
 
@@ -788,12 +790,12 @@ ul { list-style: none; }
     .container { padding: 0 14px; }
     .info-bar { font-size: 11px; }
 
-    .hero-content { padding: 28px 0 24px; }
-    .hero-text h1 { font-size: clamp(24px, 6.5vw, 32px); }
-    .hero-text p { font-size: 13.5px; }
+    .hero-content { padding: 20px 0 18px; }
+    .hero-text h1 { font-size: clamp(20px, 5.2vw, 26px); }
+    .hero-text p { font-size: 13px; margin-bottom: 12px; }
     .hero-cta { flex-direction: column; }
     .hero-cta .btn-lg { width: 100%; }
-    .hero-badges { gap: 6px 12px; font-size: 11.5px; }
+    .hero-badges { gap: 4px 10px; font-size: 11px; }
 
     /* Sections tighter */
     .how-to-order, .delivery-coverage { padding: 32px 0; }
@@ -826,8 +828,9 @@ ul { list-style: none; }
 
 /* Tiny phones (≤380px) */
 @media (max-width: 380px) {
-    .hero-text h1 { font-size: 22px; line-height: 1.25; }
-    .hero-text p { font-size: 13px; }
+    .hero-text h1 { font-size: 19px; line-height: 1.25; }
+    .hero-text h1 span { font-size: 0.8em; }
+    .hero-text p { font-size: 12.5px; }
     .step-card { padding: 14px 8px; min-width: calc(50% - 6px); }
     .step-icon { width: 44px; height: 44px; }
     .step-icon i { font-size: 18px; }
