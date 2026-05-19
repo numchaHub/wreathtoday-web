@@ -671,9 +671,9 @@ ul { list-style: none; }
 
     /* Header — slimmer on mobile */
     .header-content { padding: 8px 0; gap: 12px; }
-    .logo-img { height: 44px; }
+    .logo-img { height: 52px; width: auto; }
     .header-actions { gap: 8px; }
-    .filter-bar { top: 60px; }
+    .filter-bar { top: 68px; }
 
     /* Info bar — horizontal scroll instead of wrap */
     .info-bar { padding: 6px 0; font-size: 12px; }
