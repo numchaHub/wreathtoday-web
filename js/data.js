@@ -328,6 +328,113 @@ const PRODUCTS = [
       size: "วงรี 70x110 ซม.", flowers: ["ฟาแลนนอปซิส","กุหลาบขาว","มะลิ","พวงมาลัยทอง"] }
 ];
 
+// ============================================
+// FLOWERS_REF — visual badge mapping for flower names
+// Each flower has: color (CSS gradient) + type (icon hint) + image (optional URL)
+// Modal renders these as colored badges so users see what they're getting.
+// ============================================
+const FLOWERS_REF = {
+    // --- เบญจมาศ (Chrysanthemum) ---
+    "เบญจมาศ":       { color: "linear-gradient(135deg,#fff,#f0f0f0)", border: "#ddd", type: "flower" },
+    "เบญจมาศขาว":     { color: "linear-gradient(135deg,#fff,#f5f5f5)", border: "#ddd", type: "flower" },
+    "เบญจมาศชมพู":    { color: "linear-gradient(135deg,#ffc0cb,#ff8fa3)", border: "#f099a8", type: "flower" },
+    "เบญจมาศเหลือง":   { color: "linear-gradient(135deg,#fff5b8,#ffd93d)", border: "#f0c828", type: "flower" },
+    "เบญจมาศแดง":     { color: "linear-gradient(135deg,#ff6b6b,#c92a2a)", border: "#a01515", type: "flower" },
+
+    // --- เยอบีร่า (Gerbera) ---
+    "เยอบีร่า":       { color: "linear-gradient(135deg,#ffe5e5,#ffb4b4)", border: "#e89090", type: "flower" },
+    "เยอบีร่าขาว":     { color: "linear-gradient(135deg,#fff,#f5f5f5)", border: "#ddd", type: "flower" },
+    "เยอบีร่าชมพู":    { color: "linear-gradient(135deg,#ffb4d4,#ff6b9d)", border: "#e8508a", type: "flower" },
+    "เยอบีร่าส้ม":     { color: "linear-gradient(135deg,#ffd4a3,#ff9842)", border: "#e87f2e", type: "flower" },
+    "เยอบีร่าเหลือง":  { color: "linear-gradient(135deg,#fff3a0,#ffd93d)", border: "#f0c828", type: "flower" },
+    "เยอบีร่าแดง":     { color: "linear-gradient(135deg,#ff8585,#c92a2a)", border: "#a01515", type: "flower" },
+
+    // --- ลิลลี่ (Lily) ---
+    "ลิลลี่":         { color: "linear-gradient(135deg,#fff,#f8f4e8)", border: "#e0d8b8", type: "flower" },
+    "ลิลลี่ขาว":      { color: "linear-gradient(135deg,#fff,#f8f4e8)", border: "#e0d8b8", type: "flower" },
+    "ลิลลี่ชมพู":     { color: "linear-gradient(135deg,#ffe0ec,#ff9ec6)", border: "#e886b3", type: "flower" },
+    "ลิลลี่เหลือง":   { color: "linear-gradient(135deg,#fff5b8,#ffe066)", border: "#f0c828", type: "flower" },
+
+    // --- กุหลาบ (Rose) ---
+    "กุหลาบ":         { color: "linear-gradient(135deg,#ff9ec6,#e8336d)", border: "#c91f5a", type: "rose" },
+    "กุหลาบขาว":      { color: "linear-gradient(135deg,#fff,#f0e8e8)", border: "#d8c8c8", type: "rose" },
+    "กุหลาบครีม":     { color: "linear-gradient(135deg,#fff5e0,#e8d9b8)", border: "#c8b890", type: "rose" },
+    "กุหลาบชมพู":     { color: "linear-gradient(135deg,#ffb8d4,#e8336d)", border: "#c91f5a", type: "rose" },
+    "กุหลาบม่วง":     { color: "linear-gradient(135deg,#d8a8e8,#7950b8)", border: "#5a3899", type: "rose" },
+    "กุหลาบส้ม":      { color: "linear-gradient(135deg,#ffc599,#ff7733)", border: "#e85c1f", type: "rose" },
+    "กุหลาบเหลือง":   { color: "linear-gradient(135deg,#fff080,#ffc107)", border: "#e0a800", type: "rose" },
+    "กุหลาบแดง":      { color: "linear-gradient(135deg,#ff5a5a,#a01515)", border: "#7a0000", type: "rose" },
+
+    // --- หน้าวัว (Anthurium) ---
+    "หน้าวัว":        { color: "linear-gradient(135deg,#ff8585,#c92a2a)", border: "#a01515", type: "flower" },
+    "หน้าวัวขาว":     { color: "linear-gradient(135deg,#fff,#f0f0f0)", border: "#ddd", type: "flower" },
+    "หน้าวัวชมพู":    { color: "linear-gradient(135deg,#ffb8d4,#ff6b9d)", border: "#e8508a", type: "flower" },
+    "หน้าวัวแดง":     { color: "linear-gradient(135deg,#ff5a5a,#a01515)", border: "#7a0000", type: "flower" },
+
+    // --- ปิงปอง (Pingpong mum) ---
+    "ปิงปอง":         { color: "linear-gradient(135deg,#fff5b8,#ffd93d)", border: "#f0c828", type: "flower" },
+    "ปิงปองเขียว":    { color: "linear-gradient(135deg,#d8f099,#7cb342)", border: "#5e8e2c", type: "flower" },
+    "ปิงปองเหลือง":   { color: "linear-gradient(135deg,#fff080,#ffc107)", border: "#e0a800", type: "flower" },
+
+    // --- ออร์คิด (Orchid) ---
+    "ออร์คิด":        { color: "linear-gradient(135deg,#d8a8e8,#7950b8)", border: "#5a3899", type: "flower" },
+    "ออร์คิดขาว":     { color: "linear-gradient(135deg,#fff,#f0e8f0)", border: "#d8c0d8", type: "flower" },
+    "ออร์คิดม่วง":    { color: "linear-gradient(135deg,#c895d4,#5a3899)", border: "#3e2670", type: "flower" },
+    "ออร์คิดเขียว":   { color: "linear-gradient(135deg,#c8e8a0,#7cb342)", border: "#5e8e2c", type: "flower" },
+
+    // --- คาร์เนชั่น (Carnation) ---
+    "คาร์เนชั่น":     { color: "linear-gradient(135deg,#ffd4e5,#ff8fa3)", border: "#e87090", type: "flower" },
+    "คาร์เนชั่นขาว":   { color: "linear-gradient(135deg,#fff,#f5f0f0)", border: "#ddd", type: "flower" },
+    "คาร์เนชั่นชมพู":  { color: "linear-gradient(135deg,#ffc0d8,#ff7faa)", border: "#e8608a", type: "flower" },
+
+    // --- ดอกไม้พิเศษ (Specialty flowers) ---
+    "ลิซิแอนทัส":     { color: "linear-gradient(135deg,#c8a8e8,#7950b8)", border: "#5a3899", type: "flower" },
+    "ทานตะวัน":       { color: "linear-gradient(135deg,#ffe066,#f59f00)", border: "#cc8800", type: "flower" },
+    "มะลิ":           { color: "linear-gradient(135deg,#fff,#fff8e8)", border: "#e8e0c0", type: "flower" },
+    "ดอกไม้จันทน์":   { color: "linear-gradient(135deg,#f0e0c8,#c8a878)", border: "#a08858", type: "flower" },
+    "แวนด้าม่วง":     { color: "linear-gradient(135deg,#c895d4,#5a3899)", border: "#3e2670", type: "flower" },
+    "เดนโดรเบียมชมพู": { color: "linear-gradient(135deg,#ffb8d4,#ff6b9d)", border: "#e8508a", type: "flower" },
+    "เดลฟิเนียม":    { color: "linear-gradient(135deg,#a8c8e8,#3d77c2)", border: "#2459a0", type: "flower" },
+    "ฟาแลนนอปซิส":   { color: "linear-gradient(135deg,#fff,#f0e0e8)", border: "#d8b8c8", type: "flower" },
+    "ม่วงอัญชัน":     { color: "linear-gradient(135deg,#8b75e8,#3d2a99)", border: "#241870", type: "flower" },
+    "ม่อนสเตอร่า":   { color: "linear-gradient(135deg,#a8d8a0,#558b3e)", border: "#3a6926", type: "leaf" },
+    "สแตติส":        { color: "linear-gradient(135deg,#c895d4,#7950b8)", border: "#5a3899", type: "flower" },
+    "สแตติสม่วง":     { color: "linear-gradient(135deg,#b884d8,#5a3899)", border: "#3e2670", type: "flower" },
+    "ไฮเดรนเยีย":    { color: "linear-gradient(135deg,#b8d4e8,#5d8fc2)", border: "#3e6ea0", type: "flower" },
+    "ไฮเดรนเยียฟ้า":  { color: "linear-gradient(135deg,#a8c8e8,#3d77c2)", border: "#2459a0", type: "flower" },
+    "ไฮเดรนเยียม่วง": { color: "linear-gradient(135deg,#b8a8e8,#5a3899)", border: "#3e2670", type: "flower" },
+
+    // --- พวงมาลัย ---
+    "พวงมาลัย":       { color: "linear-gradient(135deg,#fff8d8,#f5d088)", border: "#c8a058", type: "flower" },
+    "พวงมาลัยทอง":    { color: "linear-gradient(135deg,#ffe066,#d4a017)", border: "#a07c10", type: "flower" },
+
+    // --- ใบ (Leaves / Foliage) ---
+    "ใบปรง":          { color: "linear-gradient(135deg,#a8c890,#5e8e2c)", border: "#3a6919", type: "leaf" },
+    "ใบยูคาลิปตัส":   { color: "linear-gradient(135deg,#c8d4b8,#7a8e5e)", border: "#5a6e3e", type: "leaf" },
+    "ยูคาลิปตัส":     { color: "linear-gradient(135deg,#c8d4b8,#7a8e5e)", border: "#5a6e3e", type: "leaf" },
+    "ใบเฟิร์น":       { color: "linear-gradient(135deg,#a8d8a0,#558b3e)", border: "#3a6926", type: "leaf" },
+
+    // --- โบว์ / ริบบิ้น (Ribbons / Bows) ---
+    "โบว์":           { color: "linear-gradient(135deg,#e8e8e8,#a0a0a0)", border: "#888", type: "ribbon" },
+    "โบว์ขาว":        { color: "linear-gradient(135deg,#fff,#e8e8e8)", border: "#bbb", type: "ribbon" },
+    "โบว์ครีม":       { color: "linear-gradient(135deg,#fff5e0,#e8d9b8)", border: "#c8b890", type: "ribbon" },
+    "โบว์ชมพู":       { color: "linear-gradient(135deg,#ffd4e5,#ff8fa3)", border: "#e87090", type: "ribbon" },
+    "โบว์ม่วง":       { color: "linear-gradient(135deg,#c8a8e8,#7950b8)", border: "#5a3899", type: "ribbon" },
+    "โบว์ม่วงอ่อน":   { color: "linear-gradient(135deg,#d8c8e8,#9070c8)", border: "#7050a0", type: "ribbon" },
+    "โบว์เขียว":      { color: "linear-gradient(135deg,#c8e8a0,#7cb342)", border: "#5e8e2c", type: "ribbon" },
+    "โบว์แดง":        { color: "linear-gradient(135deg,#ff8585,#c92a2a)", border: "#a01515", type: "ribbon" },
+    "โบว์ผ้าดำ":      { color: "linear-gradient(135deg,#555,#1a1a1a)", border: "#000", type: "ribbon" },
+    "โบว์ผ้าเขียว":   { color: "linear-gradient(135deg,#c8e8a0,#558b3e)", border: "#3a6926", type: "ribbon" },
+    "โบว์ผ้าไหม":     { color: "linear-gradient(135deg,#fff0b8,#d4a017)", border: "#a07c10", type: "ribbon" },
+    "ริบบิ้นชมพู":    { color: "linear-gradient(135deg,#ffd4e5,#ff8fa3)", border: "#e87090", type: "ribbon" },
+    "ริบบิ้นดำ":      { color: "linear-gradient(135deg,#555,#1a1a1a)", border: "#000", type: "ribbon" },
+    "ริบบิ้นทอง":     { color: "linear-gradient(135deg,#ffe066,#d4a017)", border: "#a07c10", type: "ribbon" },
+    "ริบบิ้นน้ำเงิน":  { color: "linear-gradient(135deg,#a8c8e8,#1c4a8e)", border: "#0c3470", type: "ribbon" },
+    "ริบบิ้นส้ม":     { color: "linear-gradient(135deg,#ffc599,#ff7733)", border: "#e85c1f", type: "ribbon" },
+    "ริบบิ้นเขียว":   { color: "linear-gradient(135deg,#c8e8a0,#558b3e)", border: "#3a6926", type: "ribbon" },
+    "ริบบิ้นเขียว-ทอง":{ color: "linear-gradient(135deg,#c8e8a0,#d4a017)", border: "#a07c10", type: "ribbon" }
+};
+
 const PROVINCES = [
     "กรุงเทพมหานคร","กระบี่","กาญจนบุรี","กาฬสินธุ์","กำแพงเพชร","ขอนแก่น","จันทบุรี","ฉะเชิงเทรา","ชลบุรี","ชัยนาท","ชัยภูมิ","ชุมพร","เชียงราย","เชียงใหม่","ตรัง","ตราด","ตาก","นครนายก","นครปฐม","นครพนม","นครราชสีมา","นครศรีธรรมราช","นครสวรรค์","นนทบุรี","นราธิวาส","น่าน","บึงกาฬ","บุรีรัมย์","ปทุมธานี","ประจวบคีรีขันธ์","ปราจีนบุรี","ปัตตานี","พระนครศรีอยุธยา","พังงา","พัทลุง","พิจิตร","พิษณุโลก","เพชรบุรี","เพชรบูรณ์","แพร่","พะเยา","ภูเก็ต","มหาสารคาม","มุกดาหาร","แม่ฮ่องสอน","ยโสธร","ยะลา","ร้อยเอ็ด","ระนอง","ระยอง","ราชบุรี","ลพบุรี","ลำปาง","ลำพูน","เลย","ศรีสะเกษ","สกลนคร","สงขลา","สตูล","สมุทรปราการ","สมุทรสงคราม","สมุทรสาคร","สระแก้ว","สระบุรี","สิงห์บุรี","สุโขทัย","สุพรรณบุรี","สุราษฎร์ธานี","สุรินทร์","หนองคาย","หนองบัวลำภู","อ่างทอง","อุดรธานี","อุทัยธานี","อุตรดิตถ์","อุบลราชธานี","อำนาจเจริญ"
 ];
