@@ -259,18 +259,17 @@ function openProductModal(id) {
     const originalPriceHTML = product.originalPrice
         ? `<span class="price-original">฿${product.originalPrice.toLocaleString()}</span>`
         : '';
-    // Build flower badges with color swatches (uses FLOWERS_REF from data.js)
+    // Build flower badges with real photos (or gradient swatch fallback)
     const FLOWER_FALLBACK = { color: "linear-gradient(135deg,#e8e8e8,#a0a0a0)", border: "#888", type: "flower" };
     const FLOWER_ICONS = { flower: "fa-spa", rose: "fa-fan", leaf: "fa-leaf", ribbon: "fa-ribbon" };
     const flowersHTML = product.flowers.map(f => {
         const ref = (typeof FLOWERS_REF !== 'undefined' && FLOWERS_REF[f]) || FLOWER_FALLBACK;
+        const photoUrl = (typeof FLOWER_IMAGES !== 'undefined' && FLOWER_IMAGES[f]) || null;
         const icon = FLOWER_ICONS[ref.type] || FLOWER_ICONS.flower;
-        return `<div class="flower-badge">
-            <div class="flower-swatch" style="background:${ref.color};border-color:${ref.border};">
-                <i class="fas ${icon}"></i>
-            </div>
-            <span class="flower-name">${f}</span>
-        </div>`;
+        const swatch = photoUrl
+            ? `<div class="flower-photo"><img src="${photoUrl}?v=${IMG_VER}" alt="${f}" loading="lazy" decoding="async"></div>`
+            : `<div class="flower-swatch" style="background:${ref.color};border-color:${ref.border};"><i class="fas ${icon}"></i></div>`;
+        return `<div class="flower-badge">${swatch}<span class="flower-name">${f}</span></div>`;
     }).join('');
     const lineMsg = encodeURIComponent(
         'สนใจสั่งซื้อ: ' + product.name +

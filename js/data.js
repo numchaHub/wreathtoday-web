@@ -435,6 +435,80 @@ const FLOWERS_REF = {
     "ริบบิ้นเขียว-ทอง":{ color: "linear-gradient(135deg,#c8e8a0,#d4a017)", border: "#a07c10", type: "ribbon" }
 };
 
+// ============================================
+// FLOWER_IMAGES — real photo references for each flower type
+// Maps Thai name → image path (in /image/flowers/ folder)
+// Modal shows the real photo if available, falls back to gradient swatch.
+// ============================================
+const FLOWER_IMAGES = {
+    // Chrysanthemum
+    "เบญจมาศ": "image/flowers/chrysanthemum.jpg",
+    "เบญจมาศขาว": "image/flowers/chrysanthemum.jpg",
+    "เบญจมาศชมพู": "image/flowers/chrysanthemum.jpg",
+    "เบญจมาศเหลือง": "image/flowers/chrysanthemum.jpg",
+    "เบญจมาศแดง": "image/flowers/chrysanthemum.jpg",
+    // Gerbera
+    "เยอบีร่า": "image/flowers/gerbera.jpg",
+    "เยอบีร่าขาว": "image/flowers/gerbera.jpg",
+    "เยอบีร่าชมพู": "image/flowers/gerbera.jpg",
+    "เยอบีร่าส้ม": "image/flowers/gerbera.jpg",
+    "เยอบีร่าเหลือง": "image/flowers/gerbera.jpg",
+    "เยอบีร่าแดง": "image/flowers/gerbera.jpg",
+    // Lily
+    "ลิลลี่": "image/flowers/lily.jpg",
+    "ลิลลี่ขาว": "image/flowers/lily.jpg",
+    "ลิลลี่ชมพู": "image/flowers/lily.jpg",
+    "ลิลลี่เหลือง": "image/flowers/lily.jpg",
+    // Rose
+    "กุหลาบ": "image/flowers/rose-pink.jpg",
+    "กุหลาบขาว": "image/flowers/rose-pink.jpg",
+    "กุหลาบครีม": "image/flowers/rose-pink.jpg",
+    "กุหลาบชมพู": "image/flowers/rose-pink.jpg",
+    "กุหลาบม่วง": "image/flowers/rose-pink.jpg",
+    "กุหลาบส้ม": "image/flowers/rose-red.jpg",
+    "กุหลาบเหลือง": "image/flowers/rose-pink.jpg",
+    "กุหลาบแดง": "image/flowers/rose-red.jpg",
+    // Anthurium
+    "หน้าวัว": "image/flowers/anthurium.jpg",
+    "หน้าวัวขาว": "image/flowers/anthurium.jpg",
+    "หน้าวัวชมพู": "image/flowers/anthurium.jpg",
+    "หน้าวัวแดง": "image/flowers/anthurium.jpg",
+    // Pingpong mum
+    "ปิงปอง": "image/flowers/pingpong.jpg",
+    "ปิงปองเขียว": "image/flowers/pingpong.jpg",
+    "ปิงปองเหลือง": "image/flowers/pingpong.jpg",
+    // Orchid
+    "ออร์คิด": "image/flowers/orchid.jpg",
+    "ออร์คิดขาว": "image/flowers/orchid.jpg",
+    "ออร์คิดม่วง": "image/flowers/orchid.jpg",
+    "ออร์คิดเขียว": "image/flowers/orchid.jpg",
+    // Carnation
+    "คาร์เนชั่น": "image/flowers/carnation.jpg",
+    "คาร์เนชั่นขาว": "image/flowers/carnation.jpg",
+    "คาร์เนชั่นชมพู": "image/flowers/carnation.jpg",
+    // Specialty
+    "ลิซิแอนทัส": "image/flowers/lisianthus.jpg",
+    "ทานตะวัน": "image/flowers/sunflower.jpg",
+    "มะลิ": "image/flowers/jasmine.jpg",
+    "ดอกไม้จันทน์": "image/flowers/marigold.jpg",
+    "แวนด้าม่วง": "image/flowers/vanda.jpg",
+    "เดนโดรเบียมชมพู": "image/flowers/dendrobium.jpg",
+    "เดลฟิเนียม": "image/flowers/delphinium.jpg",
+    "ฟาแลนนอปซิส": "image/flowers/phalaenopsis.jpg",
+    "ม่อนสเตอร่า": "image/flowers/monstera.jpg",
+    "สแตติส": "image/flowers/statice.jpg",
+    "สแตติสม่วง": "image/flowers/statice.jpg",
+    "ไฮเดรนเยีย": "image/flowers/hydrangea.jpg",
+    "ไฮเดรนเยียฟ้า": "image/flowers/hydrangea.jpg",
+    "ไฮเดรนเยียม่วง": "image/flowers/hydrangea.jpg",
+    // Foliage
+    "ใบเฟิร์น": "image/flowers/fern.jpg",
+    "ใบยูคาลิปตัส": "image/flowers/eucalyptus.jpg",
+    "ยูคาลิปตัส": "image/flowers/eucalyptus.jpg",
+    "ใบปรง": "image/flowers/fern.jpg"
+    // Note: โบว์/ริบบิ้น/พวงมาลัย — no photo, use gradient swatch
+};
+
 const PROVINCES = [
     "กรุงเทพมหานคร","กระบี่","กาญจนบุรี","กาฬสินธุ์","กำแพงเพชร","ขอนแก่น","จันทบุรี","ฉะเชิงเทรา","ชลบุรี","ชัยนาท","ชัยภูมิ","ชุมพร","เชียงราย","เชียงใหม่","ตรัง","ตราด","ตาก","นครนายก","นครปฐม","นครพนม","นครราชสีมา","นครศรีธรรมราช","นครสวรรค์","นนทบุรี","นราธิวาส","น่าน","บึงกาฬ","บุรีรัมย์","ปทุมธานี","ประจวบคีรีขันธ์","ปราจีนบุรี","ปัตตานี","พระนครศรีอยุธยา","พังงา","พัทลุง","พิจิตร","พิษณุโลก","เพชรบุรี","เพชรบูรณ์","แพร่","พะเยา","ภูเก็ต","มหาสารคาม","มุกดาหาร","แม่ฮ่องสอน","ยโสธร","ยะลา","ร้อยเอ็ด","ระนอง","ระยอง","ราชบุรี","ลพบุรี","ลำปาง","ลำพูน","เลย","ศรีสะเกษ","สกลนคร","สงขลา","สตูล","สมุทรปราการ","สมุทรสงคราม","สมุทรสาคร","สระแก้ว","สระบุรี","สิงห์บุรี","สุโขทัย","สุพรรณบุรี","สุราษฎร์ธานี","สุรินทร์","หนองคาย","หนองบัวลำภู","อ่างทอง","อุดรธานี","อุทัยธานี","อุตรดิตถ์","อุบลราชธานี","อำนาจเจริญ"
 ];
