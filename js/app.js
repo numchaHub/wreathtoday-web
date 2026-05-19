@@ -259,18 +259,7 @@ function openProductModal(id) {
     const originalPriceHTML = product.originalPrice
         ? `<span class="price-original">฿${product.originalPrice.toLocaleString()}</span>`
         : '';
-    // Build flower badges with real photos (or gradient swatch fallback)
-    const FLOWER_FALLBACK = { color: "linear-gradient(135deg,#e8e8e8,#a0a0a0)", border: "#888", type: "flower" };
-    const FLOWER_ICONS = { flower: "fa-spa", rose: "fa-fan", leaf: "fa-leaf", ribbon: "fa-ribbon" };
-    const flowersHTML = product.flowers.map(f => {
-        const ref = (typeof FLOWERS_REF !== 'undefined' && FLOWERS_REF[f]) || FLOWER_FALLBACK;
-        const photoUrl = (typeof FLOWER_IMAGES !== 'undefined' && FLOWER_IMAGES[f]) || null;
-        const icon = FLOWER_ICONS[ref.type] || FLOWER_ICONS.flower;
-        const swatch = photoUrl
-            ? `<div class="flower-photo"><img src="${photoUrl}?v=${IMG_VER}" alt="${f}" loading="lazy" decoding="async"></div>`
-            : `<div class="flower-swatch" style="background:${ref.color};border-color:${ref.border};"><i class="fas ${icon}"></i></div>`;
-        return `<div class="flower-badge">${swatch}<span class="flower-name">${f}</span></div>`;
-    }).join('');
+    const flowersHTML = product.flowers.map(f => `<li>${f}</li>`).join('');
     const lineMsg = encodeURIComponent(
         'สนใจสั่งซื้อ: ' + product.name +
         '\nราคา: ฿' + product.price.toLocaleString() +
@@ -298,8 +287,8 @@ function openProductModal(id) {
                     <h3>รายละเอียด</h3>
                     <p>${product.description}</p>
                     <p><strong>ขนาด:</strong> ${product.size}</p>
-                    <h3 style="margin-top:12px;">ดอกไม้ที่ใช้</h3>
-                    <div class="flower-grid">${flowersHTML}</div>
+                    <h3 style="margin-top:12px;">ส่วนประกอบ</h3>
+                    <ul>${flowersHTML}</ul>
                 </div>
                 <div class="modal-order">
                     <h3>สั่งซื้อพวงหรีดนี้</h3>
