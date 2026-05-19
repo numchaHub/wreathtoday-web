@@ -1,6 +1,6 @@
 # WreathToday Project Handoff
 
-> Last updated: 2026-05-11 (Google Ads setup complete)
+> Last updated: 2026-05-20 (Security hardening + Google Ads still stuck)
 > Use this as primary context after `/compact` to resume work efficiently.
 
 ---
@@ -240,14 +240,15 @@ F:\GitHub\
 
 ## 🚀 What to Resume Tomorrow
 
-### Priority 1: Google Ads Day-1 Review (most urgent)
-- Check `https://ads.google.com/aw/campaigns` → WreathToday-BKK
-- Verify Sitelink "สั่งผ่าน LINE 24 ชม." approved (was pending review)
-- Impressions/clicks appearing? (expect 5-15 impressions, 0-2 clicks first day)
-- CTR check: 5%+ = good, <2% = fix ad copy
-- Search Terms Report: คีย์เวิร์ด → ข้อความค้นหา — add bad queries to negative
-- Conversion: any LINE clicks or phone clicks recorded?
-- Spend so far: should be ~฿100-150
+### Priority 1: Google Ads Decision (stuck for 9+ days)
+- **Status:** WreathToday-BKK still 0 impressions, ฿0 spent
+- Even Manual CPC ฿20 + ฿1,500/วัน budget can't trigger impressions
+- Account likely on silent hold (reactivated from 2018 cancellation)
+- **Options:**
+  - 🆕 Create NEW Google Ads account with different Gmail (clean slate)
+  - 📱 Switch to Meta Ads (Facebook/IG) — faster approval, better B2C
+  - 📞 Direct outreach to temples (offline)
+  - ⏳ Wait 2-4 more weeks for Google to unblock (low confidence)
 
 ### Priority 2: SEO Index Status Check
 - Search Console — 10 URLs that were index-requested
@@ -400,6 +401,67 @@ ssh root@157.230.43.169 "tail -20 /var/log/nginx/error.log"
 - First impressions/clicks appearing?
 - Conversion data flowing?
 - Search Terms — any odd queries to add as negative?
+
+### 2026-05-13 to 2026-05-19 — Spam attacks + Cloudflare hardening
+
+**Spam attacks:** Casino/gambling URL spam started hitting site
+- /pinocasino-reviews-comprehend-customer-...
+- /33-best-activities-in-thessaloniki-greece...
+- /mr-bet-50-freispiele-exklusive-einzahlung-... (German)
+- /dragon-tiger-by-the-triple-payouts-games-...
+- /dunder-spielbank-erfahrungen-pramie-casin... (German)
+
+**Cloudflare WAF (Custom rule #1):**
+- Name: "Block spam URL patterns"
+- Method: URI Path `contains` with 39+ gambling/spam keywords (Free plan doesn't allow regex `matches`)
+- Coverage: casino, gambling, poker, jackpot, freispiele, spielbank, etc.
+- Action: Block
+- Events blocked: 532/24h then 460+/24h
+- Limit: 5 custom rules max on Free plan, 4000 chars per expression
+
+**Other Cloudflare protections enabled:**
+- ✅ **Block AI bots** (Cloudflare managed) — ChatGPT, Claude, Perplexity blocked
+- ✅ **Bot Fight Mode** — auto-block unknown scrapers (preserves Google/Bing)
+
+### 2026-05-20 (TODAY) — nginx Defense in Depth + Google Ads Diagnosis
+
+**Google Ads status (9 days after launch):**
+- ⚠️ Still 0 impressions despite Manual CPC ฿20 + budget raised to ฿1,500/วัน
+- Account appears stuck in verification limbo (was previously cancelled in 2018)
+- Google support gave only generic advice
+- All campaign checks green but "การแสดงผล: เร็วๆ นี้" forever
+- Diagnosis: Reactivated account silently held by Google's trust system
+- **Recommendation:** Either create new Google Ads account with different email,
+  switch to Meta Ads (faster approval), or wait 2-4 weeks for unblock
+
+**nginx Security Hardening (Droplet):**
+- File: `/etc/nginx/sites-available/wreathtoday.com`
+- Backup: `/etc/nginx/sites-available/wreathtoday.com.backup.20260520`
+- Added 2 layers:
+  1. **Bot User-Agent block** (60+ patterns): AhrefsBot, SemrushBot, MJ12bot,
+     DotBot, PetalBot, BLEXBot, MauiBot, Bytespider, scrapy, python-requests,
+     curl/, wget, libcurl, httpie, etc. + empty UA
+  2. **URL pattern block** (90+ patterns): casino, gambling, poker, jackpot,
+     freispiele, spielbank, 1xbet, betway, megaways, viagra, cialis, etc.
+- **Whitelisted:** Mozilla browsers, Googlebot, AdsBot-Google, Bingbot,
+  facebookexternalhit, LineBot, Twitterbot, WhatsApp, LinkedInBot
+- **Tested:** all 8 test cases pass (browsers + Google/Bing → 200, bots/spam → 403)
+- **Defense in depth:** Cloudflare WAF (edge) + nginx (origin)
+- ⚠️ nginx config NOT in git repo — lives only on Droplet
+- ⚠️ Don't push to GitHub (config has no place in static-site repo)
+
+**Rollback command if nginx breaks:**
+```bash
+ssh root@157.230.43.169 "cp /etc/nginx/sites-available/wreathtoday.com.backup.20260520 /etc/nginx/sites-available/wreathtoday.com && systemctl reload nginx"
+```
+
+**App Platform cleanup:** Destroyed orca-app (old wreathtoday DO App Platform deploy)
+- Saving ~$0.30/month
+
+**Spam URLs that still appear in Cloudflare Web Analytics:**
+- These are LOGGED before nginx 403 response — analytics counts request hits, not page loads
+- Real "loaded" page views = those that returned 200 only
+- Future: Use GA4 events for accurate user metrics (not Cloudflare beacon)
 
 ---
 
