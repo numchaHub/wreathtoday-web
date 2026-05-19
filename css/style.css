@@ -658,3 +658,191 @@ ul { list-style: none; }
     .faq-item summary { padding: 16px 20px; font-size: 0.98rem; }
     .faq-item .faq-answer { padding: 16px 20px 18px; font-size: 0.92rem; }
 }
+
+/* ============================================
+   Mobile Responsive Overhaul (v2)
+   ============================================ */
+
+/* Tablet & smaller (≤768px) */
+@media (max-width: 768px) {
+    body { font-size: 15px; line-height: 1.65; }
+    .container { padding: 0 16px; }
+
+    /* Header — slimmer on mobile */
+    .header-content { padding: 8px 0; gap: 12px; }
+    .logo-img { height: 44px; }
+    .header-actions { gap: 8px; }
+    .filter-bar { top: 60px; }
+
+    /* Info bar — horizontal scroll instead of wrap */
+    .info-bar { padding: 6px 0; font-size: 12px; }
+    .info-items {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 0 16px;
+        gap: 16px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .info-items::-webkit-scrollbar { display: none; }
+    .info-items span { white-space: nowrap; flex-shrink: 0; }
+
+    /* Hero — refined */
+    .hero-banner { min-height: auto; }
+    .hero-content { padding: 36px 0 32px; min-height: auto; }
+    .hero-text { max-width: 100%; }
+    .hero-text h1 {
+        font-size: clamp(28px, 7vw, 38px);
+        line-height: 1.2;
+        margin-bottom: 12px;
+        letter-spacing: -0.3px;
+    }
+    .hero-text h1 span { font-size: 0.85em; display: inline-block; }
+    .hero-text p { font-size: 14px; margin-bottom: 18px; }
+    .hero-cta { gap: 8px; margin-bottom: 16px; }
+    .hero-cta .btn-lg { padding: 12px 22px; font-size: 14px; flex: 1; justify-content: center; min-width: 0; }
+    .hero-badges {
+        gap: 8px 14px;
+        font-size: 12px;
+        flex-direction: row;
+    }
+
+    /* Section headers — smaller on mobile */
+    .section-header { margin-bottom: 28px; }
+    .section-header h2 { font-size: 22px; margin-bottom: 6px; }
+    .section-header p { font-size: 14px; }
+
+    /* How to Order — tighter */
+    .how-to-order { padding: 40px 0; }
+    .steps-grid { gap: 12px; }
+    .step-card {
+        padding: 22px 14px;
+        min-width: calc(50% - 6px);
+        max-width: calc(50% - 6px);
+        flex: 0 0 calc(50% - 6px);
+    }
+    .step-icon { width: 52px; height: 52px; margin: 6px auto 10px; }
+    .step-icon i { font-size: 22px; }
+    .step-card h3 { font-size: 15px; }
+    .step-card p { font-size: 12px; line-height: 1.45; }
+    .step-num { width: 28px; height: 28px; font-size: 13px; top: -12px; }
+
+    /* Delivery Coverage — tighter */
+    .delivery-coverage { padding: 40px 0; }
+    .coverage-card { padding: 22px 18px; }
+    .coverage-icon { width: 56px; height: 56px; margin: 0 auto 12px; }
+    .coverage-icon i { font-size: 24px; }
+    .coverage-card h3 { font-size: 17px; }
+    .coverage-time { font-size: 13px; margin-bottom: 12px; }
+    .coverage-card ul li { font-size: 13px; padding: 4px 0; }
+
+    /* FAQ — section padding */
+    .faq-section { padding: 40px 16px; }
+
+    /* Products grid — better gap */
+    .products-count { font-size: 13px; margin: 12px 0 4px; }
+    .product-info { padding: 6px 2px; }
+    .price-current { font-size: 16px; }
+    .product-name { font-size: 12px; margin-bottom: 6px; }
+
+    /* Modal — better mobile sizing */
+    .modal-overlay { padding: 12px; }
+    .modal-body { padding: 18px; }
+    .modal-info h2 { font-size: 18px; }
+    .modal-price .price-current { font-size: 22px; }
+    .modal-desc h3 { font-size: 14px; }
+    .modal-desc p, .modal-desc ul li { font-size: 13px; }
+
+    /* Footer */
+    .footer-logo-section { padding: 14px 0; }
+    .footer-info-section { padding: 14px 0; }
+    .footer-info { gap: 6px; font-size: 12px; margin-bottom: 8px; }
+    .footer-copy { font-size: 11px; }
+
+    /* Filter — horizontal scroll */
+    .filter-bar { padding: 10px 0; }
+    .filter-content { gap: 8px; }
+    .filter-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 4px;
+    }
+    .filter-tabs::-webkit-scrollbar { display: none; }
+    .filter-tab { flex-shrink: 0; padding: 6px 16px; font-size: 13px; }
+    .filter-sort { font-size: 13px; align-self: flex-end; }
+    .filter-sort select { padding: 6px 12px; font-size: 13px; }
+
+    /* Floating LINE — keep visible but smaller */
+    .floating-line { bottom: 16px; right: 16px; padding: 12px; }
+    .floating-line i { font-size: 20px; }
+    .back-to-top { bottom: 16px; left: 16px; width: 40px; height: 40px; font-size: 14px; }
+}
+
+/* Phone (≤480px) */
+@media (max-width: 480px) {
+    body { font-size: 14.5px; }
+    .container { padding: 0 14px; }
+    .info-bar { font-size: 11px; }
+
+    .hero-content { padding: 28px 0 24px; }
+    .hero-text h1 { font-size: clamp(24px, 6.5vw, 32px); }
+    .hero-text p { font-size: 13.5px; }
+    .hero-cta { flex-direction: column; }
+    .hero-cta .btn-lg { width: 100%; }
+    .hero-badges { gap: 6px 12px; font-size: 11.5px; }
+
+    /* Sections tighter */
+    .how-to-order, .delivery-coverage { padding: 32px 0; }
+    .faq-section { padding: 32px 12px; }
+    .section-header { margin-bottom: 20px; }
+    .section-header h2 { font-size: 19px; }
+    .section-header p { font-size: 13px; }
+
+    /* Step cards — 2 per row but smaller */
+    .step-card { padding: 18px 10px; }
+    .step-card h3 { font-size: 14px; }
+    .step-card p { font-size: 11.5px; }
+
+    /* Coverage cards */
+    .coverage-card { padding: 18px 14px; }
+    .coverage-card h3 { font-size: 16px; }
+
+    /* Buttons */
+    .btn-lg { padding: 12px 22px; font-size: 14px; }
+
+    /* FAQ */
+    .faq-header h2 { font-size: 1.4rem; }
+    .faq-item summary { padding: 14px 16px; font-size: 14px; }
+    .faq-item .faq-answer { padding: 14px 16px 16px; font-size: 13px; }
+
+    /* Modal */
+    .modal-overlay { padding: 8px; }
+    .modal-body { padding: 14px; }
+}
+
+/* Tiny phones (≤380px) */
+@media (max-width: 380px) {
+    .hero-text h1 { font-size: 22px; line-height: 1.25; }
+    .hero-text p { font-size: 13px; }
+    .step-card { padding: 14px 8px; min-width: calc(50% - 6px); }
+    .step-icon { width: 44px; height: 44px; }
+    .step-icon i { font-size: 18px; }
+    .coverage-card { padding: 16px 12px; }
+    .coverage-icon { width: 48px; height: 48px; }
+    .coverage-icon i { font-size: 20px; }
+    .section-header h2 { font-size: 17px; }
+    .floating-line { padding: 10px; }
+    .floating-line i { font-size: 18px; }
+}
+
+/* Touch targets — ensure ≥44px on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .nav-link { min-height: 44px; display: flex; align-items: center; }
+    .filter-tab { min-height: 36px; }
+    .btn { min-height: 40px; }
+    .faq-item summary { min-height: 48px; }
+}
