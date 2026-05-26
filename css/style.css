@@ -457,6 +457,24 @@ ul { list-style: none; }
     .coverage-featured { transform: none; }
 }
 
+/* --- SEO Internal Links Section --- */
+.seo-links { background: var(--bg-warm); padding: 50px 0; border-top: 1px solid var(--border); }
+.seo-links-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.seo-links-col h3 { font-size: 1.05rem; color: var(--secondary); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.seo-links-col h3 i { color: var(--primary); font-size: 0.95rem; }
+.seo-links-col ul { list-style: none; padding: 0; }
+.seo-links-col li { margin-bottom: 9px; }
+.seo-links-col a { font-size: 0.9rem; color: var(--text-light); transition: var(--transition); }
+.seo-links-col a:hover { color: var(--primary); padding-left: 3px; }
+
+@media (max-width: 768px) {
+    .seo-links { padding: 36px 0; }
+    .seo-links-grid { grid-template-columns: repeat(2, 1fr); gap: 24px 20px; }
+}
+@media (max-width: 400px) {
+    .seo-links-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+
 /* --- Footer --- */
 .footer { background: #555; color: #ddd; }
 .footer-logo-section { background: #fff; padding: 20px 0; text-align: center; }
