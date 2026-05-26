@@ -120,6 +120,36 @@
         <priority>0.85</priority>
     </url>
     <url>
+        <loc>https://wreathtoday.com/temple/wat-saket.html</loc>
+        <lastmod>2026-05-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://wreathtoday.com/temple/wat-yannawa.html</loc>
+        <lastmod>2026-05-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://wreathtoday.com/temple/wat-samiannari.html</loc>
+        <lastmod>2026-05-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://wreathtoday.com/temple/wat-chonprathan.html</loc>
+        <lastmod>2026-05-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://wreathtoday.com/temple/wat-dansamrong.html</loc>
+        <lastmod>2026-05-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
         <loc>https://wreathtoday.com/blog/how-to-choose-wreath.html</loc>
         <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
