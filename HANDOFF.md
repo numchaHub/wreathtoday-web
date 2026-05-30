@@ -1,6 +1,6 @@
 # WreathToday Project Handoff
 
-> Last updated: 2026-05-20 (Security hardening + Google Ads still stuck)
+> Last updated: 2026-05-20 evening (SEO content expansion + Quick-facts + Internal links)
 > Use this as primary context after `/compact` to resume work efficiently.
 
 ---
@@ -462,6 +462,58 @@ ssh root@157.230.43.169 "cp /etc/nginx/sites-available/wreathtoday.com.backup.20
 - These are LOGGED before nginx 403 response — analytics counts request hits, not page loads
 - Real "loaded" page views = those that returned 200 only
 - Future: Use GA4 events for accurate user metrics (not Cloudflare beacon)
+
+### 2026-05-20 evening — SEO content expansion + Quick-facts + Internal links + Mobile UX
+
+**5 new temple pages created** (เพิ่มจาก 11 → 16 วัด):
+- `temple/wat-chonprathan.html` — วัดชลประทานรังสฤษดิ์ (ปากเกร็ด นนทบุรี) — **รับเฉพาะพัดลม** (ตามแนวทางหลวงพ่อปัญญานันทภิกขุ) ราคา 1,800 บาท + กล่องเตือนสีส้ม + เบอร์วัด 02-583-8847
+- `temple/wat-samiannari.html` — วัดเสมียนนารี (จตุจักร) เบอร์วัด 02-580-2729
+- `temple/wat-saket.html` — วัดสระเกศ ภูเขาทอง (ป้อมปราบ)
+- `temple/wat-yannawa.html` — วัดยานนาวา (สาทร ริมเจ้าพระยา)
+- `temple/wat-dansamrong.html` — วัดด่านสำโรง (สมุทรปราการ)
+
+**Homepage SEO internal links section** — เพิ่ม `.seo-links` 4 คอลัมน์ก่อน footer (วัด/พื้นที่/จังหวัด/บทความ) — แก้ปัญหาเดิม homepage มี 0 internal links ไปยัง landing pages
+
+**Quick-facts chips** — เพิ่ม `.quick-facts` กับทุก 16 หน้าวัด
+- ไม่มีหัวข้อ "สรุปด่วน", ไม่ใส่ราคา (ตามที่ user ขอ: "เดี๋ยวนี้คนเค้าไม่อ่านกันยาวๆ เอาสั้นๆเน้นเนื้อๆ")
+- chips: ส่งด่วน 2-3 ชม. / ดอกไม้สด-พัดลม-พรีเมียม / เขต / ใบกำกับภาษี / รูปยืนยัน
+- CSS: flex pills border-radius 50px
+
+**Flower badges feature — ADDED แล้ว REVERTED**
+- เพิ่ม FLOWERS_REF (75+ ดอกไม้ไทย + gradient) + FLOWER_IMAGES ใน `js/data.js` — ยังคงไว้เป็น dead code เผื่อใช้อนาคต
+- ดาวน์โหลด 22 รูปจาก Wikimedia Commons ผ่าน Node script (User-Agent `WreathTodayBot/1.0` + 500ms delay)
+- User REJECT เพราะ Wikimedia photos มีพื้นหลังสวน ไม่ใช่ขาวสะอาด: "ตอนนี้ revert ส่วนที่ดอกไม้ที่ใช้ กลับแบบเดิมก่อนครับ ยังไม่เนียนไม่เอาขึ้นเวปดีกว่า"
+- `js/app.js` modal title กลับเป็น "ส่วนประกอบ" + simple `<li>` list
+
+**Mobile responsive overhaul** (iPhone 14 Pro Max bug fix):
+- 3 breakpoints: 768 / 480 / 380 px
+- Hero h1: `clamp(22px, 5.5vw, 30px)` (เดิม clamp(28px, 7vw, 38px) ใหญ่เกิน)
+- Logo: 44px → 52px + `width:auto` (user feedback "โลโก้ แบนไปหน่อยครับ")
+- Product images: ใส่ `aspect-ratio` + max-width 100%
+- CSS cache bust: `?v=20260520e` (bump หลายรอบเพราะ user เห็นของเก่า)
+- JS cache bust: `?v=20260520c`
+
+**Corporate.html B2B accuracy fix** (user: "ไม่ได้ หัก ณที่จ่ายได้นะครับ"):
+- ลบ: หัก ณ ที่จ่าย 3%, ใบแจ้งหนี้ก่อนจ่าย, โอนเข้าบัญชีบริษัท
+- เพิ่ม: Credit Term ลูกค้าประจำ / พร้อมเพย์ทันที / ส่งเอกสาร Email+EMS
+
+**Contact.html workflow accuracy fix** (user: "ก็เป็น เสร็จแล้วถ่ายรูปให้ดูก่อนส่ง"):
+- แก้ 6 จุด: ชัดเจนว่ารูปที่ส่งคือ "พวงหรีดที่จัดเสร็จแล้ว ก่อนส่งถึงวัด" (ไม่ใช่ตัวอย่างก่อนจัด)
+
+**Files updated:**
+- `temple/index.html` — เพิ่ม Zone 4 (5 cards ใหม่) + แก้ schema CollectionPage 11→16 + แก้ corporate text เก่า + wat-chonprathan card warning
+- `sitemap.xml` — เพิ่ม 5 URL ใหม่ → รวม 58 URLs (lastmod: 2026-05-20)
+- `css/style.css` — `.quick-facts`, `.seo-links`, `.flower-grid` (dead), mobile breakpoints
+- `index.html` — SEO internal links section + cache busters
+- `js/data.js` — FLOWERS_REF + FLOWER_IMAGES (dead code)
+- `js/app.js` — revert flower modal
+
+**Pending after this session:**
+- ⏳ Search Console: resubmit sitemap.xml + Request Indexing สำหรับ 5 URL ใหม่
+- ⏳ ตรวจสอบ auto-deploy ของหน้า temple ใหม่
+- ⏳ พิจารณาทำ quick-facts chips กับหน้า area/ + blog/ ด้วย (postponed)
+- ⏳ Google Ads ยังค้าง 0 impressions (เหมือนเดิม) — ตัดสินใจสร้างบัญชีใหม่ / ย้าย Meta Ads / รอ
+- ⏳ ถ้าได้ภาพดอกไม้พื้นขาวสะอาดในอนาคต → unwrap dead code `FLOWERS_REF` + `FLOWER_IMAGES` กลับมาใช้
 
 ---
 
